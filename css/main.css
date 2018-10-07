@@ -2117,7 +2117,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff2dff;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3208,8 +3208,8 @@ hr {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 * {
-  cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1154006&size=24"), auto !important;
+  cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1154006&size=16"), auto !important;
 }
 :active {
-  cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1154006&size=24"), auto !important;
+  cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1154006&size=16"), auto !important;
 }
