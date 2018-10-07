@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[C++数组]]></title>
     <url>%2F2018%2F10%2F07%2FC-%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数组数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。要创建数组，可使用声明语句，数组声明应指出一下三点： 存储在每个元素中的值的类型 数组名 数组中的元素数 简单变量声明该种声明数组的通用格式如下：typename arrayName[arraySize];表达式arraySize指定元素数目，可以是整形常数（如10）或const值，也可以是常量表达式（如 8*sizeof(int)），即arraySize不能是变量。ex：int days[10]; 数组的初始化只有在定义数组的时候才可初始化，不能将一个数组赋给另一个数组：12int months[5] = &#123;1,2,3,4,5&#125;; //okayint months[5]; //okay 初始化数组时，提供的值可以少于数组的元素数目，如果只对数组的一部分进行初始化，则编译器把其他元素设为0:int days[10] = {1,2}; //前两个元素为0int cards[5] = {0}; //全部为0若初始化数组时arraySize为空，C++编译器将计算元素个数。ex:short things[] = {1,3,5,8}; //编译器将使其things数组包含4个元素]]></content>
       <categories>
         <category>C++</category>
       </categories>
