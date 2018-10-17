@@ -100,7 +100,7 @@
 <meta name="keywords" content="c++,程序猿,编程">
 <meta property="og:type" content="website">
 <meta property="og:title" content="DDoubleWu的博客">
-<meta property="og:url" content="https://ddoublewu.github.io/tags/c/index.html">
+<meta property="og:url" content="https://ddoublewu.github.io/tags/C/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
 <meta property="og:description" content="致力于成为程序猿的菜鸟">
 <meta property="og:locale" content="zh-Hans">
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="https://ddoublewu.github.io/tags/c/"/>
+  <link rel="canonical" href="https://ddoublewu.github.io/tags/C/"/>
 
 
 
@@ -155,7 +155,7 @@
 
 
 
-  <title>标签: c++ | DDoubleWu的博客</title>
+  <title>标签: C++ | DDoubleWu的博客</title>
   
 
 
@@ -321,7 +321,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>c++<small>标签</small>
+        <h1>C++<small>标签</small>
         </h1>
       </div>
 
@@ -346,6 +346,62 @@
               datetime="2018-10-17T12:11:32+08:00"
               content="2018-10-17" >
           10-17
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/10/17/PAT-B-1012-数字分类/" itemprop="url">
+              
+                <span itemprop="name">PAT B 1012 数字分类</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-17T11:04:50+08:00"
+              content="2018-10-17" >
+          10-17
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/10/07/C-数组/" itemprop="url">
+              
+                <span itemprop="name">C++数组</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-07T09:59:35+08:00"
+              content="2018-10-07" >
+          10-07
         </time>
       </div>
 
@@ -431,7 +487,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1056,45 +1112,6 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</body>
-</html>
-isitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
