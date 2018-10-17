@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="DDoubleWu的博客">
 <meta property="og:description" content="数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。本文探讨C++实现数组功能的一些方式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-10T13:52:15.203Z">
+<meta property="og:updated_time" content="2018-10-10T15:00:32.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++数组">
 <meta name="twitter:description" content="数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。本文探讨C++实现数组功能的一些方式。">
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k 字
+                  1.3k 字
                 </span>
               
 
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -487,9 +487,12 @@
 <h3 id="数组的使用"><a href="#数组的使用" class="headerlink" title="数组的使用"></a>数组的使用</h3><p>对于第一个元素，可以使用p[0],第二个元素为p[1]<br>ex:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> *p = <span class="keyword">new</span> <span class="keyword">double</span> [<span class="number">2</span>];</span><br><span class="line">p[<span class="number">0</span>] = <span class="number">1.0</span>;</span><br><span class="line">p[<span class="number">1</span>] = <span class="number">2.0</span>;</span><br><span class="line"><span class="keyword">delete</span> [] p;</span><br></pre></td></tr></table></figure></p>
 <h2 id="模板类vector创建"><a href="#模板类vector创建" class="headerlink" title="模板类vector创建"></a>模板类vector创建</h2><h3 id="vector初始化"><a href="#vector初始化" class="headerlink" title="vector初始化"></a>vector初始化</h3><p>模板类vector也是一种动态数组，可以在末尾添加新数据，还可以在中间添加新数据，基本上是使用new创建动态数组的替代品，要创建vector模板对象，可使用通常的<type>表示法来指出要使用的类型，还可用初始化参数来指出需要多少矢量<br>ex:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ratings(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; scores(n);</span><br></pre></td></tr></table></figure></type></p>
 <p>由于运算符[]被重载，因此创建vector对象后，可以使用通常的数组表示法来访问每个元素:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">retings[<span class="number">0</span>] = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;scores[i]&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure></p>
-<h2 id="vector基本用法"><a href="#vector基本用法" class="headerlink" title="vector基本用法"></a>vector基本用法</h2><h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>采用<strong> push_back()</strong>可以将元素添加到末尾<br>ex:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; scores;</span><br><span class="line"><span class="keyword">double</span> temp;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;temp &amp;&amp; temp &gt;=<span class="number">0</span>)</span><br><span class="line">  scores.push_back(temp);</span><br></pre></td></tr></table></figure></p>
-<p>这样每次循环都会给scores对象添加一个元素，在编写或运程序时，无需了解元素的数目。只要能够取得足够的内存，程序就可以增加scores的长度</p>
-<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p>采用erase()方法删除矢量中给定区间的元素，他接受两个迭代器参数，这些参数定义了要删除的区间。第一个迭代器指向区间的起始处，第二个迭代器位于区间终止处的后一个位置。<br>ex:<br><code>`</code>c++<br>scores.erase(scores.begin(),scores.begin()+2)   //删除begin()到begin()+1的元素</p>
+<h3 id="vector基本用法"><a href="#vector基本用法" class="headerlink" title="vector基本用法"></a>vector基本用法</h3><p>所有STL容器都提供了一些基本方法，其中包括size()——返回容器中元素数目,swap()——交换两个容器的内容,begin()——返回一个指向容器中第一个元素的迭代器,end()——返回一个表示超过容器尾的迭代器。</p>
+<h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><p>采用<strong> push_back()</strong>可以将元素添加到末尾<br>ex:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; scores;</span><br><span class="line"><span class="keyword">double</span> temp;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;temp &amp;&amp; temp &gt;=<span class="number">0</span>)</span><br><span class="line">  scores.push_back(temp);</span><br></pre></td></tr></table></figure></p>
+<p>这样每次循环都会给scores对象添加一个元素，在编写或运程序时，无需了解元素的数目。只要能够取得足够的内存，程序就可以增加scores的长度。</p>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><p>采用erase()方法删除矢量中给定区间的元素，他接受两个迭代器参数，这些参数定义了要删除的区间。第一个迭代器指向区间的起始处，第二个迭代器位于区间终止处的后一个位置。<br>ex:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scores.erase(scores.begin(),scores.begin()+<span class="number">2</span>)   <span class="comment">//删除begin()到begin()+1的元素</span></span><br></pre></td></tr></table></figure></p>
+<p>该区间为前闭后开，即[begin(),end()]包含的内容为[p1,p2)</p>
+<h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><p>使用insert()方法插入元素，insert()接收3个参数，第一个参数指定了新元素的插入位置，第二个和第三个迭代器参数定义了被插入区间，下面的代码将矢量new_d中除第一个元素外的所有元素插入到old_v矢量的第一个元素前面:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">old_v.insert(old_v.begin(),new_v.begin()+<span class="number">1</span>,new_v.end());</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -681,7 +684,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -743,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建数组"><span class="nav-number">1.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单变量声明"><span class="nav-number">1.1.</span> <span class="nav-text">简单变量声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的初始化"><span class="nav-number">1.1.1.</span> <span class="nav-text">数组的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-11数组的初始化方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">C++11数组的初始化方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用new创建动态数组"><span class="nav-number">1.2.</span> <span class="nav-text">使用new创建动态数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化数组"><span class="nav-number">1.2.1.</span> <span class="nav-text">初始化数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的使用"><span class="nav-number">1.2.2.</span> <span class="nav-text">数组的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板类vector创建"><span class="nav-number">1.3.</span> <span class="nav-text">模板类vector创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector初始化"><span class="nav-number">1.3.1.</span> <span class="nav-text">vector初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector基本用法"><span class="nav-number">1.4.</span> <span class="nav-text">vector基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加元素"><span class="nav-number">1.4.1.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元素"><span class="nav-number">1.4.2.</span> <span class="nav-text">删除元素</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建数组"><span class="nav-number">1.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单变量声明"><span class="nav-number">1.1.</span> <span class="nav-text">简单变量声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的初始化"><span class="nav-number">1.1.1.</span> <span class="nav-text">数组的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-11数组的初始化方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">C++11数组的初始化方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用new创建动态数组"><span class="nav-number">1.2.</span> <span class="nav-text">使用new创建动态数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化数组"><span class="nav-number">1.2.1.</span> <span class="nav-text">初始化数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的使用"><span class="nav-number">1.2.2.</span> <span class="nav-text">数组的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板类vector创建"><span class="nav-number">1.3.</span> <span class="nav-text">模板类vector创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector初始化"><span class="nav-number">1.3.1.</span> <span class="nav-text">vector初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector基本用法"><span class="nav-number">1.3.2.</span> <span class="nav-text">vector基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加元素"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">插入元素</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -793,7 +796,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.1k字</span>
+  <span class="post-count">博客全站共1.3k字</span>
 </div>
 
         
