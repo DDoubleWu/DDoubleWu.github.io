@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B 1028 人口普查]]></title>
+    <url>%2F2018%2F10%2F21%2FPAT-B-1028-%E4%BA%BA%E5%8F%A3%E6%99%AE%E6%9F%A5%2F</url>
+    <content type="text"><![CDATA[（20分）某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6 日，所以超过 200 岁的生日和未出生的生日都是不合理的，应该被过滤掉。 输入格式：输入在第一行给出正整数 N，取值在(0,10​5​​]；随后 N 行，每行给出 1 个人的姓名（由不超过 5 个英文字母组成的字符串）、以及按 yyyy/mm/dd（即年/月/日）格式给出的生日。题目保证最年长和最年轻的人没有并列。 输出格式：在一行中顺序输出有效生日的个数、最年长人和最年轻人的姓名，其间以空格分隔。 输入样例：1234565John 2001/05/12Tom 1814/09/06Ann 2121/01/30James 1814/09/05Steve 1967/11/20 输出样例：13 Tom John 关键点 年龄大小的比较 当没有符合要求的年龄时，输出为0 对输入的处理 习得知识点scanf的用法：参考文章：C语言函数详解对年月日大小的比较：参考文章: https://blog.csdn.net/daniel960601/article/details/55261196即year10000+month100+day，即可比较大小 代码:123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;cstdio&gt; #include &lt;string.h&gt;using namespace std;struct People &#123; char name[6]; int year, month, day; int total;&#125;p[100000];int main()&#123; int N, i, n = 0; int max, min; char old_name[6], young_name[6]; max = 0; min = 20140907; scanf("%d", &amp;N); for (i = 0; i&lt;N; i++) &#123; scanf("%s %d/%d/%d",&amp;p[i].name,&amp;p[i].year, &amp;p[i].month, &amp;p[i].day); p[i].total = p[i].year * 10000 + p[i].month * 100 + p[i].day; &#125; for (i = 0; i&lt;N; i++) &#123; if (p[i].total&gt;20140906 || p[i].total&lt;18140906) continue; else &#123; n++; if (p[i].total&gt;max) &#123; max = p[i].total; strcpy(young_name, p[i].name); &#125; if (p[i].total&lt;min) &#123; strcpy(old_name, p[i].name); min = p[i].total; &#125; &#125; &#125; if(n) printf("%d %s %s", n, old_name, young_name); else printf("0\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>PAT</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B 1021 个位数统计]]></title>
     <url>%2F2018%2F10%2F19%2FPAT-B-1021-%E4%B8%AA%E4%BD%8D%E6%95%B0%E7%BB%9F%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[（15分）给定一个 k 位整数 $ N=d​_{k−1}10​^{k−1}+⋯+d_{1}​​10​^1​​+d_​{0}​​(0≤d_{​i​​}≤9, i=0,⋯,k−1,d_​{k−1​​}&gt;0) $ ，请编写程序统计每种不同的个位数字出现的次数。例如：给定 N=100311，则有 2 个 0，3 个 1，和 1 个 3。 输入格式：每个输入包含 1 个测试用例，即一个不超过 1000 位的正整数 N。 输出格式：对 N 中每一种不同的个位数字，以 D:M 的格式在一行中输出该位数字 D 及其在 N 中出现的次数 M。要求按 D 的升序输出。 输入样例：1100311 输出样例：1230:21:33:1 代码：12345678910111213141516171819202122232425262728#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123; int num[10] = &#123; 0 &#125;; char dig[10] = &#123; '0','1','2','3','4','5','6','7','8','9' &#125;; string str; cin &gt;&gt; str; int i, j; for (i = 0; i&lt;str.size(); i++) &#123; for (j = 0; j&lt;10; j++) &#123; if (dig[j] == str[i]) &#123; num[j]++; break; &#125; &#125; &#125; for (i = 0; i&lt;10; i++) &#123; if(num[i]!=0) cout &lt;&lt; i &lt;&lt; ':' &lt;&lt; num[i] &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+    <content type="text"><![CDATA[（15分）给定一个 k 位整数 N=d​_{k−1}10​^{k−1}+⋯+d_110​^1​​+d_​0 (0≤d_{​i​​}≤9, i=0,⋯,k−1,d_{k−1​​}>0) 请编写程序统计每种不同的个位数字出现的次数。例如：给定 N=100311，则有 2 个 0，3 个 1，和 1 个 3。 输入格式：每个输入包含 1 个测试用例，即一个不超过 1000 位的正整数 N。 输出格式：对 N 中每一种不同的个位数字，以 D:M 的格式在一行中输出该位数字 D 及其在 N 中出现的次数 M。要求按 D 的升序输出。 输入样例：1100311 输出样例：1230:21:33:1 代码：12345678910111213141516171819202122232425262728#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123; int num[10] = &#123; 0 &#125;; char dig[10] = &#123; '0','1','2','3','4','5','6','7','8','9' &#125;; string str; cin &gt;&gt; str; int i, j; for (i = 0; i&lt;str.size(); i++) &#123; for (j = 0; j&lt;10; j++) &#123; if (dig[j] == str[i]) &#123; num[j]++; break; &#125; &#125; &#125; for (i = 0; i&lt;10; i++) &#123; if(num[i]!=0) cout &lt;&lt; i &lt;&lt; ':' &lt;&lt; num[i] &lt;&lt; endl; &#125; return 0;&#125;]]></content>
       <categories>
         <category>PAT</category>
       </categories>
