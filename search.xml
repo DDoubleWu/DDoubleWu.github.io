@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B 1032 挖掘机技术哪家强]]></title>
+    <url>%2F2018%2F10%2F22%2FPAT-B-1032-%E6%8C%96%E6%8E%98%E6%9C%BA%E6%8A%80%E6%9C%AF%E5%93%AA%E5%AE%B6%E5%BC%BA%2F</url>
+    <content type="text"><![CDATA[为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。 输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。 输出格式：在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。 输入样例：123456763 652 801 1002 703 403 0 输出样例：12 150 关键点： 最后一个测试点运行时间较长，代码需简洁 习得的知识点：简单声明数组不可将变量作为size，但vector可行123456#include &lt;vector&gt;int main()&#123; int n = 1000; vector&lt;int&gt; a(n);&#125; 代码：12345678910111213141516171819202122232425262728#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;int main()&#123; int N, i, n, m,max = 0; //m为total数组下标，max为队伍编号最大值 int max_s = 0; //max_s为最大总分 cin &gt;&gt; N; vector&lt;int&gt; num(N), score(N),total(N); for (i = 0; i&lt;N; i++) &#123; cin&gt;&gt;num[i]&gt;&gt;score[i]; if (max &lt; num[i]) max = num[i]; m = num[i]; total[m - 1] += score[i]; &#125; for (i = 0; i&lt;max; i++) &#123; if (max_s&lt;total[i]) &#123; max_s = total[i]; n = i + 1; &#125; &#125; cout &lt;&lt; n &lt;&lt; ' ' &lt;&lt; max_s; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B 1031 查验身份证]]></title>
+    <url>%2F2018%2F10%2F22%2FPAT-B-1031-%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[（15分）一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值Z；最后按照以下关系对应Z值与校验码M的值：Z：0 1 2 3 4 5 6 7 8 9 10M：1 0 X 9 8 7 6 5 4 3 2现在给定一些身份证号码，请你验证校验码的有效性，并输出有问题的号码。 输入格式：输入第一行给出正整数N（≤100）是输入的身份证号码的个数。随后N行，每行给出1个18位身份证号码。 输出格式：按照输入的顺序每行输出1个有问题的身份证号码。这里并不检验前17位是否合理，只检查前17位是否全为数字且最后1位校验码计算准确。如果所有号码都正常，则输出All passed。 输入样例1：12345432012419880824005612010X19890101123411010819671130186637070419881216001X 输出样例1：12312010X19890101123411010819671130186637070419881216001X 输入样例2：1232320124198808240056110108196711301862 输出样例2：1All passed 关键点： 校验码的检验 X为10 出现的错误：看题看成了输出正确的… 代码123456789101112131415161718192021222324252627282930313233343536373839404142#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123; int N, i, j, z; int num, n; int por[17] = &#123; 7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2 &#125;; char M[11] = &#123; '1','0','X','9','8','7','6','5','4','3','2'&#125;; string str, s[100]; num = n = 0; cin &gt;&gt; N; for (i = 0; i&lt;N; i++) &#123; cin &gt;&gt; str; for (j = 0; j&lt;17; j++) &#123; if (str[j] == 'X') num += 10 * por[j]; else if (str[j]&gt;='0'&amp;&amp;str[j]&lt;='9') num += (str[j] - 48)*por[j]; else &#123; num = 0; s[n++] = str; break; &#125; &#125; if (num == 0) continue; else &#123; z = num % 11; if ( M[z] != str[17]) s[n++] = str; num = 0; &#125; &#125; if (n == 0) cout &lt;&lt; "All" &lt;&lt; ' '&lt;&lt; "passed"; else &#123; for (i = 0; i&lt;n; i++) cout &lt;&lt; s[i] &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B 1028 人口普查]]></title>
     <url>%2F2018%2F10%2F21%2FPAT-B-1028-%E4%BA%BA%E5%8F%A3%E6%99%AE%E6%9F%A5%2F</url>
     <content type="text"><![CDATA[（20分）某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6 日，所以超过 200 岁的生日和未出生的生日都是不合理的，应该被过滤掉。 输入格式：输入在第一行给出正整数 N，取值在(0,10​5​​]；随后 N 行，每行给出 1 个人的姓名（由不超过 5 个英文字母组成的字符串）、以及按 yyyy/mm/dd（即年/月/日）格式给出的生日。题目保证最年长和最年轻的人没有并列。 输出格式：在一行中顺序输出有效生日的个数、最年长人和最年轻人的姓名，其间以空格分隔。 输入样例：1234565John 2001/05/12Tom 1814/09/06Ann 2121/01/30James 1814/09/05Steve 1967/11/20 输出样例：13 Tom John 关键点 年龄大小的比较 当没有符合要求的年龄时，输出为0 对输入的处理 习得知识点scanf的用法：参考文章：C语言函数详解对年月日大小的比较：参考文章: https://blog.csdn.net/daniel960601/article/details/55261196即year10000+month100+day，即可比较大小 代码:123456789101112131415161718192021222324252627282930313233343536373839404142434445#include &lt;cstdio&gt; #include &lt;string.h&gt;using namespace std;struct People &#123; char name[6]; int year, month, day; int total;&#125;p[100000];int main()&#123; int N, i, n = 0; int max, min; char old_name[6], young_name[6]; max = 0; min = 20140907; scanf("%d", &amp;N); for (i = 0; i&lt;N; i++) &#123; scanf("%s %d/%d/%d",&amp;p[i].name,&amp;p[i].year, &amp;p[i].month, &amp;p[i].day); p[i].total = p[i].year * 10000 + p[i].month * 100 + p[i].day; &#125; for (i = 0; i&lt;N; i++) &#123; if (p[i].total&gt;20140906 || p[i].total&lt;18140906) continue; else &#123; n++; if (p[i].total&gt;max) &#123; max = p[i].total; strcpy(young_name, p[i].name); &#125; if (p[i].total&lt;min) &#123; strcpy(old_name, p[i].name); min = p[i].total; &#125; &#125; &#125; if(n) printf("%d %s %s", n, old_name, young_name); else printf("0\n"); return 0;&#125;]]></content>
@@ -8,9 +34,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -21,9 +47,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -34,9 +60,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -47,9 +73,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -60,9 +86,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -73,9 +99,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -86,9 +112,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -99,9 +125,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -113,8 +139,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>笔记</tag>
         <tag>基础</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
 </search>

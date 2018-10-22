@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ddoublewu.github.io/"/>
-  <updated>2018-10-21T09:02:51.734Z</updated>
+  <updated>2018-10-22T15:50:14.099Z</updated>
   <id>https://ddoublewu.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PAT B 1032 挖掘机技术哪家强</title>
+    <link href="https://ddoublewu.github.io/2018/10/22/PAT-B-1032-%E6%8C%96%E6%8E%98%E6%9C%BA%E6%8A%80%E6%9C%AF%E5%93%AA%E5%AE%B6%E5%BC%BA/"/>
+    <id>https://ddoublewu.github.io/2018/10/22/PAT-B-1032-挖掘机技术哪家强/</id>
+    <published>2018-10-22T15:44:53.000Z</published>
+    <updated>2018-10-22T15:50:14.099Z</updated>
+    
+    <content type="html"><![CDATA[<p>为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。</p><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。<br><a id="more"></a></p><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。</p><h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">3</span> <span class="number">65</span></span><br><span class="line"><span class="number">2</span> <span class="number">80</span></span><br><span class="line"><span class="number">1</span> <span class="number">100</span></span><br><span class="line"><span class="number">2</span> <span class="number">70</span></span><br><span class="line"><span class="number">3</span> <span class="number">40</span></span><br><span class="line"><span class="number">3</span> <span class="number">0</span></span><br></pre></td></tr></table></figure><h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">150</span></span><br></pre></td></tr></table></figure><h2 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h2><ol><li><strong>最后一个测试点运行时间较长，代码需简洁</strong></li></ol><h2 id="习得的知识点："><a href="#习得的知识点：" class="headerlink" title="习得的知识点："></a>习得的知识点：</h2><p>简单声明数组不可将变量作为size，但vector可行<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">1000</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> N, i, n, m,max = <span class="number">0</span>;          <span class="comment">//m为total数组下标，max为队伍编号最大值</span></span><br><span class="line"><span class="keyword">int</span> max_s = <span class="number">0</span>;                   <span class="comment">//max_s为最大总分</span></span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; num(N), score(N),total(N);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;N; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;num[i]&gt;&gt;score[i];</span><br><span class="line"><span class="keyword">if</span> (max &lt; num[i]) max = num[i];</span><br><span class="line">m = num[i];</span><br><span class="line">total[m - <span class="number">1</span>] += score[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;max; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (max_s&lt;total[i])</span><br><span class="line">&#123;</span><br><span class="line">max_s = total[i];</span><br><span class="line">n = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">' '</span> &lt;&lt; max_s;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。&lt;/p&gt;
+&lt;h2 id=&quot;输入格式：&quot;&gt;&lt;a href=&quot;#输入格式：&quot; class=&quot;headerlink&quot; title=&quot;输入格式：&quot;&gt;&lt;/a&gt;输入格式：&lt;/h2&gt;&lt;p&gt;输入在第 1 行给出不超过 10​5​​ 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
+    
+    
+      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT B 1031 查验身份证</title>
+    <link href="https://ddoublewu.github.io/2018/10/22/PAT-B-1031-%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/"/>
+    <id>https://ddoublewu.github.io/2018/10/22/PAT-B-1031-查验身份证/</id>
+    <published>2018-10-22T15:36:53.000Z</published>
+    <updated>2018-10-22T15:42:52.737Z</updated>
+    
+    <content type="html"><![CDATA[<p>（15分）一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：<br>首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值Z；最后按照以下关系对应Z值与校验码M的值：<br>Z：0 1 2 3 4 5 6 7 8 9 10<br>M：1 0 X 9 8 7 6 5 4 3 2<br>现在给定一些身份证号码，请你验证校验码的有效性，并输出有问题的号码。<br><a id="more"></a></p><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入第一行给出正整数N（≤100）是输入的身份证号码的个数。随后N行，每行给出1个18位身份证号码。</p><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>按照输入的顺序每行输出1个有问题的身份证号码。这里并不检验前17位是否合理，只检查前17位是否全为数字且最后1位校验码计算准确。如果所有号码都正常，则输出All passed。</p><h2 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">320124198808240056</span></span><br><span class="line"><span class="number">12010</span>X198901011234</span><br><span class="line"><span class="number">110108196711301866</span></span><br><span class="line"><span class="number">37070419881216001</span>X</span><br></pre></td></tr></table></figure><h2 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">12010</span>X198901011234</span><br><span class="line"><span class="number">110108196711301866</span></span><br><span class="line"><span class="number">37070419881216001</span>X</span><br></pre></td></tr></table></figure><h2 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">320124198808240056</span></span><br><span class="line"><span class="number">110108196711301862</span></span><br></pre></td></tr></table></figure><h2 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">All passed</span><br></pre></td></tr></table></figure><h2 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h2><ol><li><strong>校验码的检验</strong></li><li><strong>X为10</strong></li></ol><h2 id="出现的错误："><a href="#出现的错误：" class="headerlink" title="出现的错误："></a>出现的错误：</h2><p>看题看成了输出正确的…</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> N, i, j, z;</span><br><span class="line"><span class="keyword">int</span> num, n;</span><br><span class="line"><span class="keyword">int</span> por[<span class="number">17</span>] = &#123; <span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">char</span> M[<span class="number">11</span>] = &#123; <span class="string">'1'</span>,<span class="string">'0'</span>,<span class="string">'X'</span>,<span class="string">'9'</span>,<span class="string">'8'</span>,<span class="string">'7'</span>,<span class="string">'6'</span>,<span class="string">'5'</span>,<span class="string">'4'</span>,<span class="string">'3'</span>,<span class="string">'2'</span>&#125;;</span><br><span class="line"><span class="built_in">string</span> str, s[<span class="number">100</span>];</span><br><span class="line">num = n = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;N; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str;</span><br><span class="line"><span class="keyword">for</span> (j = <span class="number">0</span>; j&lt;<span class="number">17</span>; j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (str[j] == <span class="string">'X'</span>) num += <span class="number">10</span> * por[j];</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (str[j]&gt;=<span class="string">'0'</span>&amp;&amp;str[j]&lt;=<span class="string">'9'</span>) num += (str[j] - <span class="number">48</span>)*por[j];</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123; </span><br><span class="line">  num = <span class="number">0</span>; </span><br><span class="line">  s[n++] = str; </span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (num == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">z = num % <span class="number">11</span>;</span><br><span class="line"><span class="keyword">if</span> ( M[z] != str[<span class="number">17</span>]) s[n++] = str;</span><br><span class="line">num = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (n == <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"All"</span> &lt;&lt; <span class="string">' '</span>&lt;&lt; <span class="string">"passed"</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;n; i++) <span class="built_in">cout</span> &lt;&lt; s[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;（15分）一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：&lt;br&gt;首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值Z；最后按照以下关系对应Z值与校验码M的值：&lt;br&gt;Z：0 1 2 3 4 5 6 7 8 9 10&lt;br&gt;M：1 0 X 9 8 7 6 5 4 3 2&lt;br&gt;现在给定一些身份证号码，请你验证校验码的有效性，并输出有问题的号码。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
+    
+    
+      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>PAT B 1028 人口普查</title>
@@ -34,11 +87,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -61,11 +114,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -87,11 +140,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -113,11 +166,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -139,11 +192,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -165,11 +218,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -191,11 +244,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -223,11 +276,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -251,9 +304,9 @@
     
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
