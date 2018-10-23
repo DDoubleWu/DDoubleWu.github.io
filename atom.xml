@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ddoublewu.github.io/"/>
-  <updated>2018-10-22T15:50:14.099Z</updated>
+  <updated>2018-10-23T16:33:41.777Z</updated>
   <id>https://ddoublewu.github.io/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PAT B 1038 统计同成绩学生</title>
+    <link href="https://ddoublewu.github.io/2018/10/24/PAT-B-1038-%E7%BB%9F%E8%AE%A1%E5%90%8C%E6%88%90%E7%BB%A9%E5%AD%A6%E7%94%9F/"/>
+    <id>https://ddoublewu.github.io/2018/10/24/PAT-B-1038-统计同成绩学生/</id>
+    <published>2018-10-23T16:14:41.000Z</published>
+    <updated>2018-10-23T16:33:41.777Z</updated>
+    
+    <content type="html"><![CDATA[<p>（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。</p><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。<br><a id="more"></a></p><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中按查询顺序给出得分等于指定分数的学生人数，中间以空格分隔，但行末不得有多余空格。</p><h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">60</span> <span class="number">75</span> <span class="number">90</span> <span class="number">55</span> <span class="number">75</span> <span class="number">99</span> <span class="number">82</span> <span class="number">90</span> <span class="number">75</span> <span class="number">50</span></span><br><span class="line"><span class="number">3</span> <span class="number">75</span> <span class="number">90</span> <span class="number">88</span></span><br></pre></td></tr></table></figure><h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">0</span></span><br></pre></td></tr></table></figure><h2 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h2><ol><li><strong>最后一测试点N较大，代码需简洁</strong></li><li><strong>按查询顺序输出</strong></li></ol><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> i, N, K, num, s[<span class="number">101</span>] = &#123; <span class="number">0</span> &#125;;   <span class="comment">//num为成绩</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num);</span><br><span class="line">s[num]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;K);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; K; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num);</span><br><span class="line"><span class="keyword">if</span> (i != K - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, s[num]);</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d"</span>, s[num]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。&lt;/p&gt;
+&lt;h2 id=&quot;输入格式：&quot;&gt;&lt;a href=&quot;#输入格式：&quot; class=&quot;headerlink&quot; title=&quot;输入格式：&quot;&gt;&lt;/a&gt;输入格式：&lt;/h2&gt;&lt;p&gt;输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
+    
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
+      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT B 1037 在霍格沃茨找零钱</title>
+    <link href="https://ddoublewu.github.io/2018/10/24/PAT-B-1037-%E5%9C%A8%E9%9C%8D%E6%A0%BC%E6%B2%83%E8%8C%A8%E6%89%BE%E9%9B%B6%E9%92%B1/"/>
+    <id>https://ddoublewu.github.io/2018/10/24/PAT-B-1037-在霍格沃茨找零钱/</id>
+    <published>2018-10-23T16:14:15.000Z</published>
+    <updated>2018-10-23T16:33:43.485Z</updated>
+    
+    <content type="html"><![CDATA[<p>（20分）如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价钱 P 和他实付的钱 A，你的任务是写一个程序来计算他应该被找的零钱。<br><a id="more"></a></p><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在 1 行中分别给出 P 和 A，格式为 Galleon.Sickle.Knut，其间用 1 个空格分隔。这里 Galleon 是 [0, 10​7​​] 区间内的整数，Sickle 是 [0, 17) 区间内的整数，Knut 是 [0, 29) 区间内的整数。</p><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中用与输入同样的格式输出哈利应该被找的零钱。如果他没带够钱，那么输出的应该是负数。</p><h2 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10.16</span><span class="number">.27</span> <span class="number">14.1</span><span class="number">.28</span></span><br></pre></td></tr></table></figure><h2 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.2</span><span class="number">.1</span></span><br></pre></td></tr></table></figure><h2 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">14.1</span><span class="number">.28</span> <span class="number">10.16</span><span class="number">.27</span></span><br></pre></td></tr></table></figure><h2 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">-3.2</span><span class="number">.1</span></span><br></pre></td></tr></table></figure><h2 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h2><ol><li><strong>没带够钱的情况</strong></li></ol><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> G, S, K, g, s, k;</span><br><span class="line"><span class="keyword">int</span> a, b, c,x,y,z;       <span class="comment">//a,b,c分别为加隆，银西可，纳克的值 </span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d.%d.%d"</span>, &amp;G, &amp;S, &amp;K);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d.%d.%d"</span>, &amp;g, &amp;s, &amp;k);</span><br><span class="line">    <span class="comment">//x,y,z存储g,s,k的值，即实付的金额</span></span><br><span class="line">x = g; y = s; z = k;</span><br><span class="line">c = k - K;</span><br><span class="line"><span class="keyword">if</span> (c&lt;<span class="number">0</span>) &#123; s--; c += <span class="number">29</span>; &#125;</span><br><span class="line">b = s - S;</span><br><span class="line"><span class="keyword">if</span> (b&lt;<span class="number">0</span>) &#123; g--; b += <span class="number">17</span>; &#125;</span><br><span class="line">a = g - G;</span><br><span class="line"><span class="keyword">if</span>(a&gt;=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"%d.%d.%d"</span>, a, b, c);</span><br><span class="line">    <span class="comment">//没带够钱的情况</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">c = K - z;</span><br><span class="line"><span class="keyword">if</span> (c&lt;<span class="number">0</span>) &#123; S--; c += <span class="number">29</span>; &#125;</span><br><span class="line">b = S - y;</span><br><span class="line"><span class="keyword">if</span> (b&lt;<span class="number">0</span>) &#123; G--; b += <span class="number">17</span>; &#125;</span><br><span class="line">a = G - x;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"-%d.%d.%d"</span>, a, b, c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;（20分）如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价钱 P 和他实付的钱 A，你的任务是写一个程序来计算他应该被找的零钱。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
+    
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
+      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT B 1036 跟奥巴马一起编程</title>
+    <link href="https://ddoublewu.github.io/2018/10/24/PAT-B-1036-%E8%B7%9F%E5%A5%A5%E5%B7%B4%E9%A9%AC%E4%B8%80%E8%B5%B7%E7%BC%96%E7%A8%8B/"/>
+    <id>https://ddoublewu.github.io/2018/10/24/PAT-B-1036-跟奥巴马一起编程/</id>
+    <published>2018-10-23T16:12:46.000Z</published>
+    <updated>2018-10-23T16:33:44.663Z</updated>
+    
+    <content type="html"><![CDATA[<p>（15分）美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！<br><a id="more"></a></p><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在一行中给出正方形边长 N（3≤N≤20）和组成正方形边的某种字符 C，间隔一个空格。</p><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>输出由给定字符 C 画出的正方形。但是注意到行间距比列间距大，所以为了让结果看上去更像正方形，我们输出的行数实际上是列数的 50%（四舍五入取整）。</p><h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> a</span><br></pre></td></tr></table></figure><h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aaaaaaaaaa</span><br><span class="line">a        a</span><br><span class="line">a        a</span><br><span class="line">a        a</span><br><span class="line">aaaaaaaaaa</span><br></pre></td></tr></table></figure><h2 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h2><ol><li><strong>四舍五入</strong></li></ol><h2 id="习得的方法"><a href="#习得的方法" class="headerlink" title="习得的方法:"></a>习得的方法:</h2><p>c++数学取整函数(返回值为浮点型)，需头文件math.h:</p><ol><li>ceil(x):返回不小于x的最小整数值</li><li>floor(x):返回不大于x的最小整数值</li><li>round(x):四舍五入<br>例：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">ceil</span>(x / <span class="number">2.0</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">floor</span>(x / <span class="number">2.0</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; round(x / <span class="number">2.0</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p>输出：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure></p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> N, i, j, num;</span><br><span class="line"><span class="keyword">char</span> s;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;N&gt;&gt;s;</span><br><span class="line">num = (<span class="keyword">int</span>)round(N/<span class="number">2.0</span>);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;num; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (i == <span class="number">0</span> || i == num <span class="number">-1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (j = <span class="number">0</span>; j&lt;N - <span class="number">1</span>; j++) <span class="built_in">cout</span> &lt;&lt; s;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s;</span><br><span class="line"><span class="keyword">for</span> (j = <span class="number">1</span>; j&lt;N - <span class="number">1</span>; j++) <span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;（15分）美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014 年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
+    
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
+      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>PAT B 1032 挖掘机技术哪家强</title>
@@ -35,11 +114,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -61,11 +140,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -87,11 +166,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -114,11 +193,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -140,11 +219,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -166,11 +245,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -192,11 +271,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -218,11 +297,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -244,11 +323,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -276,11 +355,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -304,9 +383,9 @@
     
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
-      <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
