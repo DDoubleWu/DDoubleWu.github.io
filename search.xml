@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B 1041 考试座位号]]></title>
+    <url>%2F2018%2F10%2F25%2FPAT-B-1041-%E8%80%83%E8%AF%95%E5%BA%A7%E4%BD%8D%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[（15分）每个 PAT 考生在参加考试时都会被分配两个座位号，一个是试机座位，一个是考试座位。正常情况下，考生在入场时先得到试机座位号码，入座进入试机状态后，系统会显示该考生的考试座位号码，考试时考生需要换到考试座位就座。但有些考生迟到了，试机已经结束，他们只能拿着领到的试机座位号码求助于你，从后台查出他们的考试座位号码。 输入格式：输入第一行给出一个正整数 N（≤1000），随后 N 行，每行给出一个考生的信息：准考证号 试机座位号 考试座位号。其中准考证号由 14 位数字组成，座位从 1 到 N 编号。输入保证每个人的准考证号都不同，并且任何时候都不会把两个人分配到同一个座位上。考生信息之后，给出一个正整数 M（≤N），随后一行中给出 M 个待查询的试机座位号码，以空格分隔。 输出格式：对应每个需要查询的试机座位号码，在一行中输出对应考生的准考证号和考试座位号码，中间用 1 个空格分隔。 输入样例：1234567410120150912233 2 410120150912119 4 110120150912126 1 310120150912002 3 223 4 输出样例：1210120150912002 210120150912119 1 代码123456789101112131415161718192021222324#include &lt;iostream&gt;using namespace std;struct People &#123; char num[14]; int test, exam;&#125;admin[1000];int main()&#123; int N, M, i, j, n; cin &gt;&gt; N; for (i = 0; i&lt;N; i++) cin &gt;&gt; admin[i].num &gt;&gt; admin[i].test &gt;&gt; admin[i].exam; cin &gt;&gt; M; for (i = 0; i&lt;M; i++) &#123; cin &gt;&gt; n; for (j = 0; j&lt;N; j++) &#123; if (admin[j].test == n) cout &lt;&lt; admin[j].num &lt;&lt; ' ' &lt;&lt; admin[j].exam &lt;&lt; endl; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B 1039 到底买不买]]></title>
+    <url>%2F2018%2F10%2F25%2FPAT-B-1039-%E5%88%B0%E5%BA%95%E4%B9%B0%E4%B8%8D%E4%B9%B0%2F</url>
+    <content type="text"><![CDATA[（20分）小红想买些珠子做一串自己喜欢的珠串。卖珠子的摊主有很多串五颜六色的珠串，但是不肯把任何一串拆散了卖。于是小红要你帮忙判断一下，某串珠子里是否包含了全部自己想要的珠子？如果是，那么告诉她有多少多余的珠子；如果不是，那么告诉她缺了多少珠子。为方便起见，我们用[0-9]、[a-z]、[A-Z]范围内的字符来表示颜色。例如在图1中，第3串是小红想做的珠串；那么第1串可以买，因为包含了全部她想要的珠子，还多了8颗不需要的珠子；第2串不能买，因为没有黑色珠子，并且少了一颗红色的珠子。 输入格式：每个输入包含 1 个测试用例。每个测试用例分别在 2 行中先后给出摊主的珠串和小红想做的珠串，两串都不超过 1000 个珠子。 输出格式：如果可以买，则在一行中输出 Yes 以及有多少多余的珠子；如果不可以买，则在一行中输出 No 以及缺了多少珠子。其间以 1 个空格分隔。 输入样例 1：12ppRYYGrrYBR2258YrR8RrY 输出样例 1：1Yes 8 输入样例 2：12ppRYYGrrYB225YrR8RrY 输出样例 2：1No 2 关键点： 将所有字符转化为数字处理 代码:1234567891011121314151617181920#include &lt;iostream&gt;using namespace std;int main()&#123; char s; int record[128] = &#123; 0 &#125;; //将所有字符转化为数字来处理 int more, less,i; more = less = 0; while ((s = getchar())!= '\n') record[(int)s]++; while ((s = getchar()) != '\n') record[(int)s]--; for (i = 0; i&lt;128; i++) &#123; if (record[i]&lt;0) less -= record[i]; else if (record[i]&gt;0) more += record[i]; &#125; if (less&gt;0) cout &lt;&lt; "No" &lt;&lt;' '&lt;&lt; less; else cout &lt;&lt; "Yes" &lt;&lt;' '&lt;&lt; more; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B 1038 统计同成绩学生]]></title>
     <url>%2F2018%2F10%2F24%2FPAT-B-1038-%E7%BB%9F%E8%AE%A1%E5%90%8C%E6%88%90%E7%BB%A9%E5%AD%A6%E7%94%9F%2F</url>
     <content type="text"><![CDATA[（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。 输出格式：在一行中按查询顺序给出得分等于指定分数的学生人数，中间以空格分隔，但行末不得有多余空格。 输入样例：1231060 75 90 55 75 99 82 90 75 503 75 90 88 输出样例：13 2 0 关键点： 最后一测试点N较大，代码需简洁 按查询顺序输出 代码：123456789101112131415161718192021#include &lt;cstdio&gt;using namespace std;int main()&#123; int i, N, K, num, s[101] = &#123; 0 &#125;; //num为成绩 scanf("%d", &amp;N); for (i = 0; i &lt; N; i++) &#123; scanf("%d", &amp;num); s[num]++; &#125; scanf("%d", &amp;K); for (i = 0; i &lt; K; i++) &#123; scanf("%d", &amp;num); if (i != K - 1) printf("%d ", s[num]); else printf("%d", s[num]); &#125; return 0;&#125;]]></content>
