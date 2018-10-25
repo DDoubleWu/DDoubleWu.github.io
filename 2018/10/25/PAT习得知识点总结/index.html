@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数 用法：123456789#include &amp;lt;iomanip&amp;gt;#include &amp;lt;iostream&amp;gt;using namespace std;int main()&amp;#123;    double a = 2.3333;    cout &amp;lt;&amp;lt; setiosflags(ios:">
+<meta name="description" content="整理PAT中习得的知识点 1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数">
 <meta name="keywords" content="C++,基础,笔记,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT习得知识点总结">
 <meta property="og:url" content="https://ddoublewu.github.io/2018/10/25/PAT习得知识点总结/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
-<meta property="og:description" content="1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数 用法：123456789#include &amp;lt;iomanip&amp;gt;#include &amp;lt;iostream&amp;gt;using namespace std;int main()&amp;#123;    double a = 2.3333;    cout &amp;lt;&amp;lt; setiosflags(ios:">
+<meta property="og:description" content="整理PAT中习得的知识点 1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T15:44:54.783Z">
+<meta property="og:updated_time" content="2018-10-25T15:47:59.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT习得知识点总结">
-<meta name="twitter:description" content="1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数 用法：123456789#include &amp;lt;iomanip&amp;gt;#include &amp;lt;iostream&amp;gt;using namespace std;int main()&amp;#123;    double a = 2.3333;    cout &amp;lt;&amp;lt; setiosflags(ios:">
+<meta name="twitter:description" content="整理PAT中习得的知识点 1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数">
 
 
 
@@ -461,7 +461,8 @@
       
 
       
-        <h2 id="1-精确到小数点后一位"><a href="#1-精确到小数点后一位" class="headerlink" title="1. 精确到小数点后一位"></a>1. 精确到小数点后一位</h2><p>采用头文件iomanip下的<code>setprecision()</code>用法精确位数</p>
+        <p>整理PAT中习得的知识点</p>
+<h2 id="1-精确到小数点后一位"><a href="#1-精确到小数点后一位" class="headerlink" title="1. 精确到小数点后一位"></a>1. 精确到小数点后一位</h2><p>采用头文件iomanip下的<code>setprecision()</code>用法精确位数<br><a id="more"></a></p>
 <h3 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">2.3333</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(<span class="number">3</span>) &lt;&lt; a;   <span class="comment">//精确到小数点后三位</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.333</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-素数的判定"><a href="#2-素数的判定" class="headerlink" title="2. 素数的判定"></a>2. 素数的判定</h2><p>素数的判定，只需查找至<strong>sqrt(num)</strong>即可</p>
