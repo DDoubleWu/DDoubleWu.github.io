@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="PAT,C++,笔记," />
+  <meta name="keywords" content="C++,笔记,PAT," />
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。">
-<meta name="keywords" content="PAT,C++,笔记">
+<meta name="description" content="（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 ${10^​5​​} $的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。">
+<meta name="keywords" content="C++,笔记,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT B 1038 统计同成绩学生">
 <meta property="og:url" content="https://ddoublewu.github.io/2018/10/24/PAT-B-1038-统计同成绩学生/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
-<meta property="og:description" content="（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。">
+<meta property="og:description" content="（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 ${10^​5​​} $的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T16:33:41.777Z">
+<meta property="og:updated_time" content="2018-10-25T14:28:24.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT B 1038 统计同成绩学生">
-<meta name="twitter:description" content="（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。">
+<meta name="twitter:description" content="（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。 输入格式：输入在第 1 行给出不超过 ${10^​5​​} $的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。">
 
 
 
@@ -462,7 +462,7 @@
 
       
         <p>（20分）本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。</p>
-<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在第 1 行给出不超过 10​5​​ 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。<br><a id="more"></a></p>
+<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在第 1 行给出不超过 ${10^​5​​} $的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。<br><a id="more"></a></p>
 <h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中按查询顺序给出得分等于指定分数的学生人数，中间以空格分隔，但行末不得有多余空格。</p>
 <h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">60</span> <span class="number">75</span> <span class="number">90</span> <span class="number">55</span> <span class="number">75</span> <span class="number">99</span> <span class="number">82</span> <span class="number">90</span> <span class="number">75</span> <span class="number">50</span></span><br><span class="line"><span class="number">3</span> <span class="number">75</span> <span class="number">90</span> <span class="number">88</span></span><br></pre></td></tr></table></figure>
 <h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
@@ -544,11 +544,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
-          
             <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
             <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
           
         </div>
       
@@ -662,7 +662,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +673,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -796,7 +796,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.2k字</span>
+  <span class="post-count">博客全站共10.2k字</span>
 </div>
 
         

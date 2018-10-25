@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="PAT,C++,笔记," />
+  <meta name="keywords" content="C++,笔记,PAT," />
 
 
 
@@ -97,14 +97,14 @@
 
 
 <meta name="description" content="给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：  A​1​​ = 能被 5 整除的数字中所有偶数的和； A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​2​​+n​3​​−n​4​​⋯； A​3​​ = 被 5 除后余 2 的数字的个数； A​4​​ = 被 5 除后余 3 的数字的平均数，精确到小数点后 1 位； A​5​​ = 被">
-<meta name="keywords" content="PAT,C++,笔记">
+<meta name="keywords" content="C++,笔记,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT B 1012 数字分类">
 <meta property="og:url" content="https://ddoublewu.github.io/2018/10/17/PAT-B-1012-数字分类/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
 <meta property="og:description" content="给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：  A​1​​ = 能被 5 整除的数字中所有偶数的和； A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​2​​+n​3​​−n​4​​⋯； A​3​​ = 被 5 除后余 2 的数字的个数； A​4​​ = 被 5 除后余 3 的数字的平均数，精确到小数点后 1 位； A​5​​ = 被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-17T05:27:04.970Z">
+<meta property="og:updated_time" content="2018-10-25T14:36:43.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT B 1012 数字分类">
 <meta name="twitter:description" content="给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：  A​1​​ = 能被 5 整除的数字中所有偶数的和； A​2​​ = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n​1​​−n​2​​+n​3​​−n​4​​⋯； A​3​​ = 被 5 除后余 2 的数字的个数； A​4​​ = 被 5 除后余 3 的数字的平均数，精确到小数点后 1 位； A​5​​ = 被">
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  653 字
+                  670 字
                 </span>
               
 
@@ -481,7 +481,9 @@
 <li><strong>行末不得有多余的空格</strong></li>
 <li><strong>A2可能出现求和为0的情况，但此时有数字满足A2条件</strong></li>
 </ol>
-<h2 id="习得知识点："><a href="#习得知识点：" class="headerlink" title="习得知识点："></a>习得知识点：</h2><p>采用头文件iomanip下的<code>setprecision()</code>用法精确位数<br>用法：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">double</span> a = <span class="number">2.3333</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(<span class="number">3</span>) &lt;&lt; a;   <span class="comment">//精确到小数点后三位</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="习得知识点："><a href="#习得知识点：" class="headerlink" title="习得知识点："></a>习得知识点：</h2><p>采用头文件iomanip下的<code>setprecision()</code>用法精确位数</p>
+<h3 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">2.3333</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(<span class="number">3</span>) &lt;&lt; a;   <span class="comment">//精确到小数点后三位</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.333</span></span><br></pre></td></tr></table></figure>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, N,b;</span><br><span class="line">	<span class="keyword">double</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; b;</span><br><span class="line">		<span class="keyword">if</span> (b % <span class="number">5</span> == <span class="number">0</span> &amp;&amp; b%<span class="number">2</span>==<span class="number">0</span>) a[<span class="number">0</span>] += b;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">5</span> == <span class="number">1</span>)</span><br><span class="line">		&#123; </span><br><span class="line">			<span class="keyword">if</span> (flag == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				a[<span class="number">1</span>] += b;</span><br><span class="line">				flag = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				a[<span class="number">1</span>] -= b;</span><br><span class="line">				flag = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">5</span> == <span class="number">2</span>) a[<span class="number">2</span>] += <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">5</span> == <span class="number">3</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			num += <span class="number">1.0</span>;</span><br><span class="line">			a[<span class="number">3</span>] += b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">5</span> ==<span class="number">4</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[<span class="number">4</span>]&lt;b) a[<span class="number">4</span>] = b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;<span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">	  <span class="keyword">if</span> (k&gt;<span class="number">0</span>&amp;&amp;i==<span class="number">1</span>&amp;&amp;a[i]==<span class="number">0</span>) <span class="built_in">cout</span>&lt;&lt; <span class="number">0</span>&lt;&lt;<span class="string">' '</span>;     <span class="comment">//针对关键点3</span></span><br><span class="line">	  <span class="keyword">else</span> <span class="keyword">if</span> (a[i] == <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">'N'</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">3</span>) <span class="built_in">cout</span> &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(<span class="number">1</span>) &lt;&lt; a[i]/num &lt;&lt;<span class="string">' '</span>;   <span class="comment">//针对关键点2，精确到小数点后一位</span></span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//行末无空格</span></span><br><span class="line">	<span class="keyword">if</span> (a[i] == <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">'N'</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; a[i];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -555,11 +557,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
-          
             <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
             <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
           
         </div>
       
@@ -673,7 +675,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -684,7 +686,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -757,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式："><span class="nav-number">1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式："><span class="nav-number">2.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例-1："><span class="nav-number">3.</span> <span class="nav-text">输入样例 1：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例-1"><span class="nav-number">4.</span> <span class="nav-text">输出样例 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例-2："><span class="nav-number">5.</span> <span class="nav-text">输入样例 2：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例-2："><span class="nav-number">6.</span> <span class="nav-text">输出样例 2：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键点："><span class="nav-number">7.</span> <span class="nav-text">关键点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习得知识点："><span class="nav-number">8.</span> <span class="nav-text">习得知识点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">9.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式："><span class="nav-number">1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式："><span class="nav-number">2.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例-1："><span class="nav-number">3.</span> <span class="nav-text">输入样例 1：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例-1"><span class="nav-number">4.</span> <span class="nav-text">输出样例 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例-2："><span class="nav-number">5.</span> <span class="nav-text">输入样例 2：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例-2："><span class="nav-number">6.</span> <span class="nav-text">输出样例 2：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键点："><span class="nav-number">7.</span> <span class="nav-text">关键点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习得知识点："><span class="nav-number">8.</span> <span class="nav-text">习得知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法："><span class="nav-number">8.1.</span> <span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">8.2.</span> <span class="nav-text">输出:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">9.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
@@ -807,7 +809,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.2k字</span>
+  <span class="post-count">博客全站共10.2k字</span>
 </div>
 
         
