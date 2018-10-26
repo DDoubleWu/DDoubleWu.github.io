@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据结构 (1)绪论]]></title>
+    <url>%2F2018%2F10%2F26%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E7%BB%AA%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[数据结构和算法1. 基本概念 数据数据是指所有能输入到计算机中并且被计算机程序处理的符号的总称 数据元素数据元素时数据的基本单位，可由若干数据项组成 数据项数据项是数据结构中讨论的最小单位]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据结构</tag>
+        <tag>计算机408</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT习得知识点总结]]></title>
     <url>%2F2018%2F10%2F25%2FPAT%E4%B9%A0%E5%BE%97%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[整理PAT中习得的知识点 1. 精确到小数点后一位采用头文件iomanip下的setprecision()用法精确位数 用法：123456789#include &lt;iomanip&gt;#include &lt;iostream&gt;using namespace std;int main()&#123; double a = 2.3333; cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(3) &lt;&lt; a; //精确到小数点后三位 return 0;&#125; 输出:12.333 2. 素数的判定素数的判定，只需查找至sqrt(num)即可 用法:123456789101112131415#include &lt;math.h&gt;#include &lt;iostream&gt;using namespace std;int main()&#123; int num = 25; int flag = 1; //做标记 for (int i = 2; i&lt;sqrt(num); i++) &#123; if (num%i == 0) &#123; flag = 0; break; &#125; &#125; if (flag == 0) cout &lt;&lt; num &lt;&lt; "不是素数" &lt;&lt; endl; else cout &lt;&lt; num &lt;&lt; "是素数" &lt;&lt; endl; return 0;&#125; 输出:125是素数 3. 字符转化大小写字母转化用法:12345678#include &lt;iostream&gt;using namespace std;int main()&#123; cout &lt;&lt; (char)('Z' + 32) &lt;&lt; endl; cout &lt;&lt; (char)('a' - 32) &lt;&lt; endl; return 0;&#125; 输出12zA 将单个数字字符转化为数字用法：1234567#include &lt;iostream&gt;using namespace std;int main()&#123; cout &lt;&lt; 5-('2' - 48) &lt;&lt; endl; return 0;&#125; 输出：13 数字与字符串的相互转换采用C++的stringstream,需头文件sstream 用法:123456789101112131415#include &lt;string&gt; #include &lt;sstream&gt; #include &lt;iostream&gt;using namespace std;int main()&#123; double num = 174.44; string res; stringstream ss; //数字转化为字符串 ss &lt;&lt; num; ss &gt;&gt; res; //或 res = ss.str(); cout &lt;&lt; res &lt;&lt; endl; return 0;&#125; 输出：1174.44 4. 数组中元素排序采用sort()函数，需头文件alogorithm 语法描述：123sort(begin,end,cmp) //cmp参数可以没有，如果没有默认为非降序排序sort(begin,end,less&lt;data-type&gt;()); //升序sort(begin,end,greater&lt;data-type&gt;()); //降序 用法1：123456789101112#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;int main()&#123; int A[5] = &#123; 1,5,3,4,2 &#125;; sort(A, A + 5); //升序 for (int i = 0; i&lt;5; i++) cout &lt;&lt; A[i] &lt;&lt; ' '; return 0;&#125; 输出1：11 2 3 4 5 用法2:1234567891011121314151617181920#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;struct Mooncake &#123; int num; &#125;cakes[100];bool cmp(Mooncake a, Mooncake b)&#123; return a.num&gt;b.num; //降序&#125;int main()&#123; int i,n = 5; for (i = 0; i &lt; n; i++) cakes[i].num = i + 1; sort(cakes, cakes + n, cmp); for (i = 0; i&lt;n; i++) cout &lt;&lt; cakes[i].num; return 0;&#125; 输出2:154321 5. 输出指定位数采用printf()函数,需头文件cstdio 用法:123456789101112#include &lt;cstdio&gt;int main()&#123; int a; char s[5] = &#123; 'l','o','v','e','\0' &#125;; a = 189; printf("a=%4d\n", a); //输出4位十进制整数，左边补空格 printf("a=%04d\n", a); //输出4位十进制整数，左边补0 printf("a=%-4d\n", a); //输出4位十进制整数，右边补空格 printf("s=%s\n", s); //输出数组字符串 return 0;&#125; 输出:1234a= 189a=0189a=189s=love 6. 对年月日大小的比较参考文章: https://blog.csdn.net/daniel960601/article/details/55261196即year 10000 + month 100 + day，即可比较大小，数值小的年龄大。 7. 四舍五入c++数学取整函数(返回值为浮点型)，需头文件math.h: ceil(x):返回不小于x的最小整数值 floor(x):返回不大于x的最小整数值 round(x):四舍五入用法：1234567891011#include &lt;math.h&gt;#include &lt;iostream&gt;using namespace std;int main()&#123; int x = 5; cout &lt;&lt; ceil(x / 2.0)&lt;&lt;endl; cout &lt;&lt; floor(x / 2.0)&lt;&lt;endl; cout &lt;&lt; round(x / 2.0)&lt;&lt;endl; return 0;&#125; 输出：123323 8. 统计字符串中的字符数时，转化为数字处理用法：1234567891011121314#include &lt;iostream&gt;using namespace std;int main()&#123; char s; int record[128] = &#123; 0 &#125;; //将所有字符转化为数字来处理 while ((s = getchar()) != '\n') record[(int)s]++; for (int i = 0; i&lt;128; i++) &#123; if (record[i]&gt;0) cout &lt;&lt; char(i) &lt;&lt; ':' &lt;&lt; record[i]&lt;&lt;endl; &#125; return 0;&#125; 输入:1I love you 输出：12345678 :2I:1e:1l:1o:2u:1v:1y:1 9. 输入一整行字符串采用getline()函数 用法：1234567891011121314#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123; char s1[10]; string s2; cin.getline(s1, 10); //输入char[] getline(cin, s2); //输入string cout &lt;&lt; s1 &lt;&lt; endl; cout &lt;&lt; s2 &lt;&lt; endl; return 0;&#125; 输入：12I love uI love you 输出：12I love uI love you 10.]]></content>
@@ -8,10 +21,10 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>基础</tag>
-        <tag>笔记</tag>
         <tag>PAT</tag>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -22,9 +35,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -35,9 +48,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -48,9 +61,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -61,9 +74,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -74,9 +87,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -87,9 +100,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -100,9 +113,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -113,9 +126,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -126,9 +139,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -139,9 +152,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -152,9 +165,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -165,9 +178,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -178,9 +191,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +204,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -204,9 +217,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -217,9 +230,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -230,22 +243,22 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[C++数组]]></title>
     <url>%2F2018%2F10%2F07%2FC-%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"><![CDATA[创建数组数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。要创建数组，可使用声明语句，数组声明应指出一下三点： 存储在每个元素中的值的类型 数组名 数组中的元素数 简单变量声明使用数组声明来创建数组时，将采用静态联编，即数组长度在编译时设置该种声明数组的通用格式如下：1typename arrayName[arraySize]; 表达式arraySize指定元素数目，可以是整形常数（如10）或const值，也可以是常量表达式（如 8*sizeof(int)），即arraySize不能是变量。ex：1int days[10]; 数组的初始化只有在定义数组的时候才可初始化，不能将一个数组赋给另一个数组：123int months[5] = &#123;1,2,3,4,5&#125;; //okayint months[5]; //okayint *p = years[5]; //okay 初始化数组时，提供的值可以少于数组的元素数目，如果只对数组的一部分进行初始化，则编译器把其他元素设为0:12int days[10] = &#123;1,2&#125;; //前两个元素为0int cards[5] = &#123;0&#125;; //全部为0 若初始化数组时arraySize为空，C++编译器将计算元素个数。ex:1short things[] = &#123;1,3,5,8&#125;; //编译器将使其things数组包含4个元素 C++11数组的初始化方法C++11中的列表初始化增加了一些功能1.初始化数组时，可以省略等号（=)1short things[4] &#123;1,2,3,4&#125;; 2.可在大括号中不包含任何东西，将所有元素设置为01float cards[4] &#123;&#125;; 3.列表初始化禁止缩窄转换12long plifs[] = &#123;25,92,3.0&#125;; //not allowedchar tlifs[] = &#123;'h','j',112&#125;; //allowed 第一条不能通过编译，因为浮点型转化为整型时缩窄操作第二条语句可以通过编译，因为虽然112是一个int值，但它在char变量的取值范围内(-128~127) 使用new创建动态数组采用new[]运算符创建数组时，将采用动态联编，即在运行时为数组分配空间，其长度也将在运行时设置。 初始化数组在C++中，只需要将数组的元素类型和元素数目告诉new即可ex:1int *p = new int [10]; //创建一个包含10个int元素的数组 new运算符返回第一个元素的地址当程序使用完new分配的内存块时，应使用delete来释放它们。对于new创建的数组，应使用以下delete来释放：1delete [] p; //方括号表示释放整个数组 如果new一个实体分配内存，则应使用delete(没有方括号)来释放 数组的使用对于第一个元素，可以使用p[0],第二个元素为p[1]ex:1234double *p = new double [2];p[0] = 1.0;p[1] = 2.0;delete [] p; 模板类vector创建vector初始化模板类vector也是一种动态数组，可以在末尾添加新数据，还可以在中间添加新数据，基本上是使用new创建动态数组的替代品，要创建vector模板对象，可使用通常的表示法来指出要使用的类型，还可用初始化参数来指出需要多少矢量ex:123456#include &lt;vector&gt;using namespace std;vector&lt;int&gt; ratings(5);int n;cin&gt;&gt;n;vector&lt;double&gt; scores(n); 由于运算符[]被重载，因此创建vector对象后，可以使用通常的数组表示法来访问每个元素:123retings[0] = 9;for (int i=0;i&lt;n;i++) cout&lt;&lt;scores[i]&lt;&lt;endl; vector基本用法所有STL容器都提供了一些基本方法，其中包括size()——返回容器中元素数目,swap()——交换两个容器的内容,begin()——返回一个指向容器中第一个元素的迭代器,end()——返回一个表示超过容器尾的迭代器。 添加元素采用 push_back()可以将元素添加到末尾ex:1234vector&lt;double&gt; scores;double temp;while (cin&gt;&gt;temp &amp;&amp; temp &gt;=0) scores.push_back(temp); 这样每次循环都会给scores对象添加一个元素，在编写或运程序时，无需了解元素的数目。只要能够取得足够的内存，程序就可以增加scores的长度。 删除元素采用erase()方法删除矢量中给定区间的元素，他接受两个迭代器参数，这些参数定义了要删除的区间。第一个迭代器指向区间的起始处，第二个迭代器位于区间终止处的后一个位置。ex:1scores.erase(scores.begin(),scores.begin()+2) //删除begin()到begin()+1的元素 该区间为前闭后开，即[begin(),end()]包含的内容为[p1,p2) 插入元素使用insert()方法插入元素，insert()接收3个参数，第一个参数指定了新元素的插入位置，第二个和第三个迭代器参数定义了被插入区间，下面的代码将矢量new_d中除第一个元素外的所有元素插入到old_v矢量的第一个元素前面:1old_v.insert(old_v.begin(),new_v.begin()+1,new_v.end());]]></content>
+    <content type="text"><![CDATA[创建数组数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。要创建数组，可使用声明语句，数组声明应指出一下三点： 存储在每个元素中的值的类型 数组名 数组中的元素数 简单变量声明使用数组声明来创建数组时，将采用静态联编，即数组长度在编译时设置该种声明数组的通用格式如下：1typename arrayName[arraySize]; 表达式arraySize指定元素数目，可以是整形常数（如10）或const值，也可以是常量表达式（如 8*sizeof(int)），即arraySize不能是变量。ex：1int days[10]; 数组的初始化只有在定义数组的时候才可初始化，不能将一个数组赋给另一个数组：123int months[5] = &#123;1,2,3,4,5&#125;; //okayint months[5]; //okayint *p = years[5]; //okay 初始化数组时，提供的值可以少于数组的元素数目，如果只对数组的一部分进行初始化，则编译器把其他元素设为0:12int days[10] = &#123;1,2&#125;; //前两个元素为0int cards[5] = &#123;0&#125;; //全部为0 若初始化数组时arraySize为空，C++编译器将计算元素个数。ex:1short things[] = &#123;1,3,5,8&#125;; //编译器将使其things数组包含4个元素 C++11数组的初始化方法C++11中的列表初始化增加了一些功能1.初始化数组时，可以省略等号（=)1short things[4] &#123;1,2,3,4&#125;; 2.可在大括号中不包含任何东西，将所有元素设置为01float cards[4] &#123;&#125;; 3.列表初始化禁止缩窄转换12long plifs[] = &#123;25,92,3.0&#125;; //not allowedchar tlifs[] = &#123;'h','j',112&#125;; //allowed 第一条不能通过编译，因为浮点型转化为整型时缩窄操作第二条语句可以通过编译，因为虽然112是一个int值，但它在char变量的取值范围内(-128~127) 使用new创建动态数组采用new[]运算符创建数组时，将采用动态联编，即在运行时为数组分配空间，其长度也将在运行时设置。 初始化数组在C++中，只需要将数组的元素类型和元素数目告诉new即可ex:1int *p = new int [10]; //创建一个包含10个int元素的数组 new运算符返回第一个元素的地址当程序使用完new分配的内存块时，应使用delete来释放它们。对于new创建的数组，应使用以下delete来释放：1delete [] p; //方括号表示释放整个数组 如果new一个实体分配内存，则应使用delete(没有方括号)来释放 数组的使用对于第一个元素，可以使用p[0],第二个元素为p[1]ex:1234double *p = new double [2];p[0] = 1.0;p[1] = 2.0;delete [] p; 模板类vector创建vector初始化模板类vector也是一种动态数组，可以在末尾添加新数据，还可以在中间添加新数据，基本上是使用new创建动态数组的替代品，要创建vector模板对象，可使用通常的表示法来指出要使用的类型，还可用初始化参数来指出需要多少矢量ex:123456#include &lt;vector&gt;using namespace std;vector&lt;int&gt; ratings(5);int n;cin&gt;&gt;n;vector&lt;double&gt; scores(n); 由于运算符[]被重载，因此创建vector对象后，可以使用通常的数组表示法来访问每个元素:123retings[0] = 9;for (int i=0;i&lt;n;i++) cout&lt;&lt;scores[i]&lt;&lt;endl; vector基本用法所有STL容器都提供了一些基本方法，其中包括size()——返回容器中元素数目,swap()——交换两个容器的内容,begin()——返回一个指向容器中第一个元素的迭代器,end()——返回一个表示超过容器尾的迭代器。 添加元素采用 push_back()可以将元素添加到末尾ex:1234vector&lt;double&gt; scores;double temp;while (cin&gt;&gt;temp &amp;&amp; temp &gt;=0) scores.push_back(temp); 这样每次循环都会给scores对象添加一个元素，在编写或运程序时，无需了解元素的数目。只要能够取得足够的内存，程序就可以增加scores的长度。 删除元素采用erase()方法删除矢量中给定区间的元素，他接受两个迭代器参数，这些参数定义了要删除的区间。第一个迭代器指向区间的起始处，第二个迭代器位于区间终止处的后一个位置。ex:1scores.erase(scores.begin(),scores.begin()+2) //删除begin()到begin()+1的元素 该区间为前闭后开，即[begin(),end()]包含的内容为[p1,p2) 插入元素使用insert()方法插入元素，insert()接收3个参数，第一个参数指定了新元素的插入位置，第二个和第三个迭代器参数定义了被插入区间，下面的代码将矢量new_d中除第一个元素外的所有元素插入到old_v矢量的第一个元素前面:1old_v.insert(old_v.begin(),new_v.begin()+1,new_v.end()); 模板类array与数组一样，array对象的长度也是固定的，也使用栈（静态内存分配），而不是自由存储区，因此其效率与数组相同，但更方便，安全；要创建array对象，需包含array头文件 array初始化1234#include &lt;array&gt;using namespace std;array&lt;int,5&gt; ai;array&lt;double,4&gt; ad = &#123;2.0,2.1,4.3,2.3&#125;;]]></content>
       <categories>
         <category>C++</category>
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>基础</tag>
         <tag>笔记</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
 </search>

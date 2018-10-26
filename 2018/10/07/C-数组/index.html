@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="C++,基础,笔记," />
+  <meta name="keywords" content="C++,笔记,基础," />
 
 
 
@@ -97,14 +97,14 @@
 
 
 <meta name="description" content="数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。本文探讨C++实现数组功能的一些方式。">
-<meta name="keywords" content="C++,基础,笔记">
+<meta name="keywords" content="C++,笔记,基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++数组">
 <meta property="og:url" content="https://ddoublewu.github.io/2018/10/07/C-数组/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
 <meta property="og:description" content="数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。本文探讨C++实现数组功能的一些方式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-17T04:33:43.361Z">
+<meta property="og:updated_time" content="2018-10-26T13:49:42.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++数组">
 <meta name="twitter:description" content="数组是一种数据格式，能够存储多个同类型的数值，每个值都存储在一个独立的数组元素中，计算机在内存中依次存储数组的各个元素。本文探讨C++实现数组功能的一些方式。">
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k 字
+                  1.4k 字
                 </span>
               
 
@@ -493,6 +493,8 @@
 <h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><p>采用erase()方法删除矢量中给定区间的元素，他接受两个迭代器参数，这些参数定义了要删除的区间。第一个迭代器指向区间的起始处，第二个迭代器位于区间终止处的后一个位置。<br>ex:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scores.erase(scores.begin(),scores.begin()+<span class="number">2</span>)   <span class="comment">//删除begin()到begin()+1的元素</span></span><br></pre></td></tr></table></figure></p>
 <p>该区间为前闭后开，即[begin(),end()]包含的内容为[p1,p2)</p>
 <h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><p>使用insert()方法插入元素，insert()接收3个参数，第一个参数指定了新元素的插入位置，第二个和第三个迭代器参数定义了被插入区间，下面的代码将矢量new_d中除第一个元素外的所有元素插入到old_v矢量的第一个元素前面:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">old_v.insert(old_v.begin(),new_v.begin()+<span class="number">1</span>,new_v.end());</span><br></pre></td></tr></table></figure></p>
+<h2 id="模板类array"><a href="#模板类array" class="headerlink" title="模板类array"></a>模板类array</h2><p>与数组一样，array对象的长度也是固定的，也使用栈（静态内存分配），而不是自由存储区，因此其效率与数组相同，但更方便，安全；要创建array对象，需包含array头文件</p>
+<h3 id="array初始化"><a href="#array初始化" class="headerlink" title="array初始化"></a>array初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">array</span>&lt;<span class="keyword">int</span>,5&gt; ai;</span><br><span class="line"><span class="built_in">array</span>&lt;<span class="keyword">double</span>,4&gt; ad = &#123;<span class="number">2.0</span>,<span class="number">2.1</span>,<span class="number">4.3</span>,<span class="number">2.3</span>&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -568,9 +570,9 @@
           
             <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
-            <a href="/tags/基础/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
-          
             <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/基础/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
           
         </div>
       
@@ -680,7 +682,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -691,7 +693,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -702,7 +704,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -764,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建数组"><span class="nav-number">1.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单变量声明"><span class="nav-number">1.1.</span> <span class="nav-text">简单变量声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的初始化"><span class="nav-number">1.1.1.</span> <span class="nav-text">数组的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-11数组的初始化方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">C++11数组的初始化方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用new创建动态数组"><span class="nav-number">1.2.</span> <span class="nav-text">使用new创建动态数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化数组"><span class="nav-number">1.2.1.</span> <span class="nav-text">初始化数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的使用"><span class="nav-number">1.2.2.</span> <span class="nav-text">数组的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板类vector创建"><span class="nav-number">1.3.</span> <span class="nav-text">模板类vector创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector初始化"><span class="nav-number">1.3.1.</span> <span class="nav-text">vector初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector基本用法"><span class="nav-number">1.3.2.</span> <span class="nav-text">vector基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加元素"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">插入元素</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建数组"><span class="nav-number">1.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单变量声明"><span class="nav-number">1.1.</span> <span class="nav-text">简单变量声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的初始化"><span class="nav-number">1.1.1.</span> <span class="nav-text">数组的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-11数组的初始化方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">C++11数组的初始化方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用new创建动态数组"><span class="nav-number">1.2.</span> <span class="nav-text">使用new创建动态数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化数组"><span class="nav-number">1.2.1.</span> <span class="nav-text">初始化数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的使用"><span class="nav-number">1.2.2.</span> <span class="nav-text">数组的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板类vector创建"><span class="nav-number">1.3.</span> <span class="nav-text">模板类vector创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector初始化"><span class="nav-number">1.3.1.</span> <span class="nav-text">vector初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector基本用法"><span class="nav-number">1.3.2.</span> <span class="nav-text">vector基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加元素"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">插入元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板类array"><span class="nav-number">1.4.</span> <span class="nav-text">模板类array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#array初始化"><span class="nav-number">1.4.1.</span> <span class="nav-text">array初始化</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -814,7 +816,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.2k字</span>
+  <span class="post-count">博客全站共10.4k字</span>
 </div>
 
         
