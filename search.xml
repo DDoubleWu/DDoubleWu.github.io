@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据结构 (2)线性表]]></title>
+    <url>%2F2018%2F10%2F27%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-2-%E7%BA%BF%E6%80%A7%E8%A1%A8%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B 1040 有几个PAT]]></title>
     <url>%2F2018%2F10%2F26%2FPAT-B-1040-%E6%9C%89%E5%87%A0%E4%B8%AAPAT%2F</url>
     <content type="text"><![CDATA[（25分）字符串 APPAPT 中包含了两个单词 PAT，其中第一个 PAT 是第 2 位(P)，第 4 位(A)，第 6 位(T)；第二个 PAT 是第 3 位(P)，第 4 位(A)，第 6 位(T)。现给定字符串，问一共可以形成多少个 PAT？ 输入格式：输入只有一行，包含一个字符串，长度不超过10​5​​，只包含 P、A、T 三种字母。 输出格式：在一行中输出给定字符串中包含多少个 PAT。由于结果可能比较大，只输出对 1000000007 取余数的结果。 输入样例：1APPAPT 输出样例：12 关键点： 对PAT数量的统计 参考参考文章:(https://www.cnblogs.com/asinlzm/p/4440603.html)核心思路: 如果有一个P出现，则只要知道后面有多少种AT可选，则这个P可以对应的PAT选择方法就有多少种；AT类似。 代码：12345678910111213141516171819202122#include &lt;iostream&gt;#include &lt;cstring&gt;using namespace std;int main()&#123; char str[100000]; int at_num, t_num, pat_num, n; pat_num = at_num = t_num = 0; long long num = 0; cin &gt;&gt; str; n = strlen(str); while (n--) &#123; if (str[n] == 'T') ++t_num; else if (str[n] == 'A') at_num += t_num; else num += at_num; if (num &gt; 1000000007) num %= 1000000007; &#125; cout &lt;&lt; num; return 0;&#125;]]></content>
@@ -16,7 +21,7 @@
   <entry>
     <title><![CDATA[数据结构 (1)绪论]]></title>
     <url>%2F2018%2F10%2F26%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E7%BB%AA%E8%AE%BA%2F</url>
-    <content type="text"><![CDATA[数据结构和算法1. 基本概念 数据数据是指所有能输入到计算机中并且被计算机程序处理的符号的总称 数据元素数据元素时数据的基本单位，可由若干数据项组成 数据项数据项是数据结构中讨论的最小单位]]></content>
+    <content type="text"><![CDATA[数据结构和算法1. 基本概念 数据数据是指所有能输入到计算机中并且被计算机程序处理的符号的总称 数据元素数据元素是数据的基本单位，可由若干数据项组成 数据项数据项是数据结构中讨论的最小单位 数据对象数据对象是性质相同的数据元素的集合，是数据的一个子集。例如，大写字母就是一个数据对象，大写字母数据对象是集合{‘A’,’B’,…,’Z’} 数据结构数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。数据结构包括3方面的内容：逻辑结构、存储结构和对数据的运算。 数据的逻辑结构数据的逻辑结构是对数据之间的关系的描述,归纳起来数据的逻辑结构主要由以下两大类：（1）线性结构线性结构指数据元素间存在着“一对一”的线性关系的数据结构。（2）非线性结构非线性结构中的结点存在着一对多的关系，它可以细分为树形结构和图形结构。]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
