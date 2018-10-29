@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  875 字
                 </span>
               
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -465,7 +465,28 @@
       
         
           
-            
+            <h2 id="线性表的定义"><a href="#线性表的定义" class="headerlink" title="线性表的定义"></a>线性表的定义</h2><p>线性表是具有<strong>相同</strong>特性数据元素的一个<strong>有限</strong>序列,线性表可以是<strong>有序</strong>的，也可以是<strong>无序</strong>的。</p>
+<h2 id="线性表的存储结构"><a href="#线性表的存储结构" class="headerlink" title="线性表的存储结构"></a>线性表的存储结构</h2><p>存储结构分为顺序存储结构和链式存储结构，前者成为顺序表，后者成为链表</p>
+<h3 id="顺序表的特性"><a href="#顺序表的特性" class="headerlink" title="顺序表的特性"></a>顺序表的特性</h3><ol>
+<li><strong>随机访问特性</strong></li>
+<li><strong>顺序表要求占用连续的存储空间，一次性分配</strong></li>
+<li><strong>做插入或删除操作时，需移动多个元素</strong></li>
+<li><strong>存储密度=1</strong><h3 id="链表的特性"><a href="#链表的特性" class="headerlink" title="链表的特性"></a>链表的特性</h3></li>
+<li><strong>不支持随机访问</strong></li>
+<li><strong>结点的存储空间利用率较顺序表稍低一些，存储密度小于1</strong></li>
+<li><strong>支持存储空间的动态分配，多次分配</strong></li>
+<li><strong>插入或删除元素时不需移动元素，只需修改指针</strong><h3 id="链表的形式"><a href="#链表的形式" class="headerlink" title="链表的形式"></a>链表的形式</h3>链表由以下五种形式：<h4 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h4></li>
+<li><strong>带头结点的单链表</strong><br>头结点指针head-&gt;next == NULL时，链表为空</li>
+<li><strong>不带头结点的单链表</strong><br>指针head == NULL时，链表为空<h4 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h4>在单链表的结点上增添一个指针域，指向当前结点的前驱<br>有头结点时，指针head-&gt;next == NULL时，链表为空<br>无头结点时，指针head == NULL时，链表为空<h4 id="循环单链表"><a href="#循环单链表" class="headerlink" title="循环单链表"></a>循环单链表</h4>循环单链表可实现从任意结点出发访问链表内的任意结点<br>有头结点时，指针head-&gt;next == head时，链表为空<br>无头结点时，指针head == NULL时，链表为空<h4 id="循环双链表"><a href="#循环双链表" class="headerlink" title="循环双链表"></a>循环双链表</h4>不带头结点的循环双链表head-&gt;next == head时，链表为空<br>带头结点的满足以下任意一条即为空<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head-&gt;prior == head;</span><br><span class="line">head-&gt;next == head&amp;&amp;head-&gt;prior == head;</span><br><span class="line">head-&gt;next == head||head-&gt;prior == head;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h4><p>静态链表借助一维数组表示，一般链表结点空间来自于整个内存，静态链表则来自于一个结构体数组。数组中每个结点含有两个分量：一个是数据元素分量data;另一个是指针分量，指示了当前结点的直接后继在数组中的位置<br><strong>注:</strong>静态链表的指针是一个存储数组下标的整形变量，通过它可以找到后集结点在数组中的位置，其功能类似于指针<br><strong>顺序表插入/删除移动元素的个数为(n-1)/2</strong> </p>
+<h2 id="线性表的结构体定义"><a href="#线性表的结构体定义" class="headerlink" title="线性表的结构体定义"></a>线性表的结构体定义</h2><h3 id="顺序表的结构体定义"><a href="#顺序表的结构体定义" class="headerlink" title="顺序表的结构体定义"></a>顺序表的结构体定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxSize 100</span></span><br><span class="line"><span class="comment">//定义一个长度为n,表内元素为整数的顺序表</span></span><br><span class="line"><span class="keyword">int</span> A[maxSize];</span><br><span class="line"><span class="keyword">int</span> n;</span><br></pre></td></tr></table></figure>
+<h3 id="单链表结点定义"><a href="#单链表结点定义" class="headerlink" title="单链表结点定义"></a>单链表结点定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> data;   </span><br><span class="line">  LNode *next;  <span class="comment">//指向后继节点的指针</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="双链表结点定义"><a href="#双链表结点定义" class="headerlink" title="双链表结点定义"></a>双链表结点定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> data;</span><br><span class="line">  LNode *prior;   <span class="comment">//指向前继结点的指针</span></span><br><span class="line">  LNode *next;    <span class="comment">//指向后继节点的指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>结点是内存中一片由用户分配的存储空间，只有一个地址来表示它的存在，没有显式的名称，因此在分配链表结点空间时，定义一个指针，来存储这片空间的地址（即指针指向结点），并通常用这个指针的名称来作为结点的名称</strong><br>例：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LNode *A = (LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br></pre></td></tr></table></figure></p>
+<p>这里A命名了两个东西：一个是结点，另一个是指向这个结点的指针。若出现’p指向q’，此时p指代指针又’用函数free()释放p的空间’,此时p代指结点。</p>
+<h2 id="顺序表的操作"><a href="#顺序表的操作" class="headerlink" title="顺序表的操作"></a>顺序表的操作</h2>
           
         
       
@@ -2048,7 +2069,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.9k字</span>
+  <span class="post-count">博客全站共11.8k字</span>
 </div>
 
         
