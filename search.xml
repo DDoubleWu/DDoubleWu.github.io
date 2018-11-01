@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[数据结构 (4)串]]></title>
     <url>%2F2018%2F11%2F01%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4-%E4%B8%B2%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串 串的存储结构定长顺序存储表示定长顺序存储表示结构体定义如下123456struct Str&#123; char str[maxSize+1]; //maxSize为已定义的常量，表示串的最大长度 //str数组长度为maxSize+1，多出一个'\0'作为结束标记 int length;&#125; 变长分配存储表示又叫动态分配表示12345struct Str&#123; char *ch; int length; &#125; 这种存储方法在使用时，需要函数malloc来分配一个长度为length、类型的char型的连续存储空间，分配的空间可以用free()来释放 串的基本操作赋值操作123456789101112131415161718192021222324252627282930313233int strassign(Str &amp;str,char &amp;ch)&#123; if(str.ch) free(str.ch); //释放原串空间 int len = 0; char *c = ch; while(*c) &#123; ++len; ++c; &#125; if(len==0) &#123; str.ch = NULL; str.length = 0; return 1; &#125; else &#123; str.ch = (char*)malloc(sizeof(char)*(len+1)) //取len+1是为了多一个空间放'\0' if(str.ch == NULL) return 0; else &#123; c = ch; for(int i=0;i&lt;len;++i,++c) str.ch[i]=*c; str.length = len; return 1; &#125; &#125;&#125; 串比较操作串比较操作时串排序应用里的核心操作1234567int strcompare(Str s1,Str s2)&#123; for(int i=0;i&lt;s1.length&amp;&amp;i&lt;s2.length;++i) if(s1.ch[i]!=s2.ch[i]) return s1.ch[i]-s2.ch[i]; return s1.length - s2.length; //返回两串相等标记&#125; 串连接操作将两个串首尾相接，合并成一个字符串的操作称为串连接操作12345678910111213141516171819202122232425int concat(Str &amp;str,Str str1,Str str2)&#123; if(str.ch) &#123; free(str.ch); str.ch = NULL; &#125; str.ch = (char*)mallco(sizeof(char)*(str1.length+str2.length+1)); if (str.ch == NULL) return 0; int i=0; while(i&lt;str1.length) &#123; str.ch[i] = str1.ch[i]; ++i; &#125; int j=0; while(j&lt;str2.length) &#123; str.ch[i+j] = str2.ch[j]; ++j; &#125; str.length = str1.length+str2.length; return 1; &#125; 求子串操作求str串中从pos位置开始，长度为len的子串，子串由substr返回给用户123456789101112131415161718192021222324252627282930int substring(Str&amp; substr,Str str,int pos,int len)&#123; if(pos&lt;0||pos&gt;=str.length||len&lt;0||len&gt;str.length-pos) return 0; if(substr.ch) &#123; free(substr.ch); substr.ch = NULL; &#125; if(len==0) &#123; substr.ch = NULL; substr.length = 0; return 1; &#125; else &#123; substr.ch = (char*)malloc(sizeof(char)*(len+1) int i = pos; int j = 0; while (i&lt;pos+len) &#123; substr.ch[++j] = str.ch[i]; ++i; &#125; substr.ch[j] = '\0'; substr.length = len; return 1; &#125;&#125; 串清空操作12345678910int clearstring(Str &amp;str)&#123; if(str.ch) &#123; free(str.ch); str.ch = NULL; &#125; str.length = 0; return 1;&#125;]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
@@ -47,9 +47,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -73,10 +73,10 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>基础</tag>
-        <tag>笔记</tag>
         <tag>PAT</tag>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -87,9 +87,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -100,9 +100,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -113,9 +113,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -126,9 +126,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -139,9 +139,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -152,9 +152,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -165,9 +165,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -178,9 +178,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +191,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -204,9 +204,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -217,9 +217,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -230,9 +230,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -243,9 +243,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -256,9 +256,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -269,9 +269,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -282,9 +282,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -295,9 +295,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -309,8 +309,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>基础</tag>
         <tag>笔记</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
 </search>
