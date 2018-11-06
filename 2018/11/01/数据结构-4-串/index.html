@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串 串的存储结构定长顺序存储表示定长顺序存储表示结构体定义如下123456struct Str&amp;#123;    char str[maxSize+1">
+<meta name="description" content="串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串">
 <meta name="keywords" content="笔记,数据结构,计算机408">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构 (4)串">
 <meta property="og:url" content="https://ddoublewu.github.io/2018/11/01/数据结构-4-串/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
-<meta property="og:description" content="串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串 串的存储结构定长顺序存储表示定长顺序存储表示结构体定义如下123456struct Str&amp;#123;    char str[maxSize+1">
+<meta property="og:description" content="串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-01T09:48:13.919Z">
+<meta property="og:updated_time" content="2018-11-06T14:16:25.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构 (4)串">
-<meta name="twitter:description" content="串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串 串的存储结构定长顺序存储表示定长顺序存储表示结构体定义如下123456struct Str&amp;#123;    char str[maxSize+1">
+<meta name="twitter:description" content="串的定义串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。由一个或多个空格组成的串称为空格串">
 
 
 
@@ -461,7 +461,7 @@
       
 
       
-        <h2 id="串的定义"><a href="#串的定义" class="headerlink" title="串的定义"></a>串的定义</h2><p>串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。<br>串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。<br>由一个或多个空格组成的串称为空格串</p>
+        <h2 id="串的定义"><a href="#串的定义" class="headerlink" title="串的定义"></a>串的定义</h2><p>串是零个或多个字符组成的有限序列。串中字符的个数称为串的长度，含有零个元素的串叫做空串。<br>串中任意连续的字符组成的子序列称为该串的子串，包含子串的串称为主串，通常用子串在主串中的第一个位置作为子串在主串中的位置。<br>由一个或多个空格组成的串称为空格串<br><a id="more"></a></p>
 <h2 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h2><h3 id="定长顺序存储表示"><a href="#定长顺序存储表示" class="headerlink" title="定长顺序存储表示"></a>定长顺序存储表示</h3><p>定长顺序存储表示结构体定义如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Str</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> str[maxSize+<span class="number">1</span>];  <span class="comment">//maxSize为已定义的常量，表示串的最大长度</span></span><br><span class="line">                          <span class="comment">//str数组长度为maxSize+1，多出一个'\0'作为结束标记</span></span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="变长分配存储表示"><a href="#变长分配存储表示" class="headerlink" title="变长分配存储表示"></a>变长分配存储表示</h3><p>又叫动态分配表示<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Str</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> *ch;</span><br><span class="line">    <span class="keyword">int</span> length;          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这种存储方法在使用时，需要函数malloc来分配一个长度为length、类型的char型的连续存储空间，分配的空间可以用free()来释放</p>
@@ -570,6 +570,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/11/01/KMP算法/" rel="prev" title="KMP算法">
+                KMP算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -657,7 +661,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -668,7 +672,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -679,7 +683,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -791,7 +795,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.6k字</span>
+  <span class="post-count">博客全站共15.8k字</span>
 </div>
 
         
