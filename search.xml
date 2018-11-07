@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据结构 (7)图]]></title>
+    <url>%2F2018%2F11%2F07%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-7-%E5%9B%BE%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据结构</tag>
+        <tag>计算机408</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据结构 (6)树与二叉树]]></title>
+    <url>%2F2018%2F11%2F07%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-6-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[树的基本概念树的定义树是一种非线性的数据结构，它是若干结点的集合，是由唯一的根和若干棵互不相交的子树组成的。每一棵子树又是一棵树。树的定义是递归的，结点数为0的树称为空树。 树的基本术语结点: 结点不仅包含数据元素，而且包含指向子树的分支。A,B,C等都是结点。结点的度: 结点拥有的子树个数或者分支的个数。A结点有3棵子树，所以树的度为3.树的度: 树中各结点度的最大值叶子结点: 又叫做 终端结点，指度为0的结点,如F,C,D都为叶子结点。非终端结点: 又叫做分支结点，指度不为0的结点。除了根节点之外的非终端结点，也叫做内部结点，如B,D,E孩子: 结点的子树的根，如A结点的孩子为B,C,D。双亲: 与孩子的定义相对应，如B,C,D结点的双亲都为A兄弟: 同一个双亲的孩子之间互为兄弟,如B,C,D互为兄弟祖先: 从根到某结点的路径上的所有结点，都是这个结点的祖先，如A,B,E都为F结点的祖先子孙: 以某结点为根的子树中的所有结点，都是该结点的子孙，如E,F为B结点的子孙树的高度（或者深度）: 树中结点的最大层次，图中树共有4层，故高度为4。结点的深度和高度:]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>数据结构</tag>
+        <tag>计算机408</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据结构 (5)数组、矩阵与广义表]]></title>
     <url>%2F2018%2F11%2F06%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5-%E6%95%B0%E7%BB%84%E3%80%81%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%B9%BF%E4%B9%89%E8%A1%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[数组]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
