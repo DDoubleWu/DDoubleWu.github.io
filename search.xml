@@ -8,22 +8,22 @@
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[数据结构 (6)树与二叉树]]></title>
     <url>%2F2018%2F11%2F07%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-6-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
-    <content type="text"><![CDATA[树的基本概念树的定义树是一种非线性的数据结构，它是若干结点的集合，是由唯一的根和若干棵互不相交的子树组成的。每一棵子树又是一棵树。树的定义是递归的，结点数为0的树称为空树。 树的基本术语结点: 结点不仅包含数据元素，而且包含指向子树的分支。A,B,C等都是结点。结点的度: 结点拥有的子树个数或者分支的个数。A结点有3棵子树，所以树的度为3.树的度: 树中各结点度的最大值叶子结点: 又叫做 终端结点，指度为0的结点,如F,C,D都为叶子结点。非终端结点: 又叫做分支结点，指度不为0的结点。除了根节点之外的非终端结点，也叫做内部结点，如B,D,E孩子: 结点的子树的根，如A结点的孩子为B,C,D。双亲: 与孩子的定义相对应，如B,C,D结点的双亲都为A兄弟: 同一个双亲的孩子之间互为兄弟,如B,C,D互为兄弟祖先: 从根到某结点的路径上的所有结点，都是这个结点的祖先，如A,B,E都为F结点的祖先子孙: 以某结点为根的子树中的所有结点，都是该结点的子孙，如E,F为B结点的子孙树的高度（或者深度）: 树中结点的最大层次，图中树共有4层，故高度为4。结点的深度和高度:]]></content>
+    <content type="text"><![CDATA[树树的定义树是一种非线性的数据结构，它是若干结点的集合，是由唯一的根和若干棵互不相交的子树组成的。每一棵子树又是一棵树。树的定义是递归的，结点数为0的树称为空树。 树的基本术语结点: 结点不仅包含数据元素，而且包含指向子树的分支。A,B,C等都是结点。结点的度: 结点拥有的子树个数或者分支的个数。A结点有3棵子树，所以树的度为3.树的度: 树中各结点度的最大值叶子结点: 又叫做 终端结点，指度为0的结点,如F,C,D都为叶子结点。非终端结点: 又叫做分支结点，指度不为0的结点。除了根节点之外的非终端结点，也叫做内部结点，如B,D,E孩子: 结点的子树的根，如A结点的孩子为B,C,D。双亲: 与孩子的定义相对应，如B,C,D结点的双亲都为A兄弟: 同一个双亲的孩子之间互为兄弟,如B,C,D互为兄弟祖先: 从根到某结点的路径上的所有结点，都是这个结点的祖先，如A,B,E都为F结点的祖先子孙: 以某结点为根的子树中的所有结点，都是该结点的子孙，如E,F为B结点的子孙树的高度（或者深度）: 树中结点的最大层次，图中树共有4层，故高度为4。结点的深度和高度: 结点的深度就是从根节点到该结点路径上的结点个数 从某结点往下走可能到达多个叶子结点，其中最长的那条路径的长度即为该结点在树中的高度。 根节点的高度为树的高度。如结点A，其高度为4，是从A到F这条路径的长度，也是整棵树的高度。 堂兄弟: 双亲在同一层的结点互为堂兄弟。如E和G互为堂兄弟。有序树: 树中结点的子树从左到右是有次序的，不能更换。无序树: 树中结点的子树没有顺序，可以随意交换。丰满树: 即理想平衡树，要求除最底层外，其他层都是满的。森林: 若干棵互不相交的输的集合。若把A去掉，剩下的3棵子树互不相交，它们组成一个森林。 树的存储结构树的存储结构最简单直观的是双亲存储结构，用一维数组就可以实现。例：数组下标表示树中的结点，数组元素的内容表示该结点的双亲结点1int tree[maxSize]; 注：树的双亲存储结构在克鲁斯卡尔算法中有重要的应用 二叉树二叉树的定义将一般的树加上两个限制条件就得到了二叉树： 每个结点多只有两棵子树，即二叉树中结点的度只能为0、1、2. 子树有左右顺序之分，不能颠倒。 满二叉树在一棵二叉树中，如果所有的分支结点都有左孩子和右孩子结点，并且叶子结点都集中在二叉树的最下一层，则这样的二叉树就是一颗满二叉树。 完全二叉树通俗的说，一棵完全二叉树一定是由一棵满二叉树从左至右、从上至下，挨个删除结点所得到的。如果跳着删除，则得到的不是完全二叉树。 二叉树的主要性质设二叉树上叶子结点数为$ n_0 $,单分支结点数为$ n_1 $,双分支结点数为$ n_2 $，则总结点数$ n=n_0+n_1+n_2 $ 非空二叉树上叶子结点数等于双分支结点数加1，即$ n_0=n_2+1 $ 在一棵二叉树中，所有结点的分支数等于单分支结点数加上双分支结点数的两倍，即总分支数为$ n_1+2n_2 $ 。 由于二叉树中除根节点之外，每个结点都有唯一的一个分支指向它，因此二叉树中有总分支数=总结点数-1(该结论对任何树都是适用的) 二叉树中总结点为&amp;n&amp;，求树中空指针的数目，可以将所有的空指针看做叶子结点，则树中原有的所有结点都成了双分支结点。因此根据性质1可知，空指针数为树中所有结点数+1，即$n+1$。 在一棵度为m的树中，叶子结点数为 $n_0=1+n_2+2n_3+…+(m-1)n_{m}$。 二叉树的第i层上最多有$2^{i-1}(i&gt;=1)$个结点 在高度（或深度）为k的二叉树最多有$ 2^{k}-1(k&gt;=1)$个结点。即满二叉树中前k层的结点个数为$2^k-1$ 有n个结点的完全二叉树，对各结点从上到下、从左到右依次编号,各结点之间有如下关系：若i为某结点a的编号，则：(若编号从0开始则为括号内)如果i不等于1(0)，则a的双亲结点的编号为⌊i/2⌋(⌈i/2⌉-1)如果2i&lt;=n,则a左孩子的编号为2i(2i+1);如果2i&gt;n；则a无左孩子如果2i+1&lt;=n，则a右孩子的编号为2i+1(2i+2)；如果2i+1&gt;n，则a无右孩子注：开口向下表示大于真实值的最小整数。，开口向上表示小于真实值的最大整数 给定n个结点，能构成n个结点，能构成h(n)种不同的二叉树，$ h(n)= \frac{1}{n+1}C^{n}_{2n} $ 具有n(n&gt;=1)个结点的完全二叉树的高度（或深度）为$log_2n+1$ (另一种为$log_2(n+1)$) 二叉树的存储结构顺序存储结构顺序存储结构即是用一个数组来存储一棵二叉树，这种存储方式最适合于完全二叉树，用于存储一般二叉树会浪费大量的存储空间。]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -34,9 +34,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -60,9 +60,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -73,9 +73,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -86,9 +86,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -99,9 +99,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -112,9 +112,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -125,10 +125,10 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
-        <tag>笔记</tag>
         <tag>基础</tag>
+        <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -139,9 +139,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -152,9 +152,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -165,9 +165,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -178,9 +178,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +191,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -204,9 +204,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -217,9 +217,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -230,9 +230,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -243,9 +243,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -256,9 +256,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -269,9 +269,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -282,9 +282,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -295,9 +295,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -308,9 +308,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -321,9 +321,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -334,9 +334,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -347,9 +347,9 @@
         <category>PAT</category>
       </categories>
       <tags>
-        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -361,8 +361,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>笔记</tag>
         <tag>基础</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
 </search>
