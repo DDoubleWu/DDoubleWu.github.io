@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据结构 (8)堆]]></title>
+    <url>%2F2018%2F11%2F13%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-8-%E5%A0%86%2F</url>
+    <content type="text"><![CDATA[若采用数组或链表实现优先队列 数组插入：元素总是插入尾部 ~O(1)删除：查找最大（或最小）关键字 ~O(n) 从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部 ~O(1)删除：查找最大（或最小）关键字 ~O(n) 删去结点 ~O(1) 有序数组插入：找到合适的位置 ~O(n)或~O($ log_2n $)删除：移动元素并插入 ~O(n) 删去最后一个元素 ~O(1)]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>计算机408</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据结构 (7)图]]></title>
     <url>%2F2018%2F11%2F07%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-7-%E5%9B%BE%2F</url>
     <content type="text"></content>
@@ -8,9 +21,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -21,9 +34,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -34,9 +47,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -60,9 +73,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -73,9 +86,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -86,9 +99,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -99,9 +112,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -112,9 +125,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>计算机408</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -125,10 +138,10 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>基础</tag>
-        <tag>笔记</tag>
         <tag>PAT</tag>
+        <tag>C++</tag>
+        <tag>笔记</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -139,9 +152,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -152,9 +165,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -165,9 +178,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -178,9 +191,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +204,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -204,9 +217,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -217,9 +230,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -230,9 +243,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -243,9 +256,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -256,9 +269,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -269,9 +282,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -282,9 +295,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -295,9 +308,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -308,9 +321,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -321,9 +334,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -334,9 +347,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -347,9 +360,9 @@
         <category>PAT</category>
       </categories>
       <tags>
+        <tag>PAT</tag>
         <tag>C++</tag>
         <tag>笔记</tag>
-        <tag>PAT</tag>
       </tags>
   </entry>
   <entry>
@@ -361,8 +374,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>基础</tag>
         <tag>笔记</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
 </search>

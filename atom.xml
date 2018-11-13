@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ddoublewu.github.io/"/>
-  <updated>2018-11-07T13:16:18.666Z</updated>
+  <updated>2018-11-13T13:01:03.389Z</updated>
   <id>https://ddoublewu.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构 (8)堆</title>
+    <link href="https://ddoublewu.github.io/2018/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-8-%E5%A0%86/"/>
+    <id>https://ddoublewu.github.io/2018/11/13/数据结构-8-堆/</id>
+    <published>2018-11-13T12:53:00.000Z</published>
+    <updated>2018-11-13T13:01:03.389Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>若采用数组或链表实现优先队列</strong></p><ol><li><strong>数组</strong><br>插入：元素总是插入尾部   ~O(1)<br>删除：查找最大（或最小）关键字   ~O(n)<br>   从数组中删除需要移动的元素 ~O(n)</li><li><strong>链表</strong><br>插入：元素总是插入链表的头部   ~O(1)<br>删除：查找最大（或最小）关键字 ~O(n)<br>   删去结点               ~O(1)</li><li><strong>有序数组</strong><br>插入：找到合适的位置   ~O(n)或~O($ log_2n $)<br>删除：移动元素并插入   ~O(n)<br>   删去最后一个元素 ~O(1)</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;若采用数组或链表实现优先队列&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;&lt;br&gt;插入：元素总是插入尾部   ~O(1)&lt;br&gt;删除：查找最大（或最小）关键字   ~O(n)&lt;br&gt;   从数组中删除需要移动的元素 ~O
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构 (7)图</title>
@@ -30,11 +61,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -56,11 +87,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -85,11 +116,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -140,11 +171,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -170,11 +201,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -197,11 +228,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -223,11 +254,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -252,11 +283,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
+    
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -279,13 +310,13 @@
       <category term="笔记" scheme="https://ddoublewu.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
-      <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+      <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -307,11 +338,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -334,11 +365,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -360,11 +391,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -386,11 +417,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -413,11 +444,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -439,11 +470,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -465,11 +496,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -492,11 +523,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
+    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -518,37 +549,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PAT B 1028 人口普查</title>
-    <link href="https://ddoublewu.github.io/2018/10/21/PAT-B-1028-%E4%BA%BA%E5%8F%A3%E6%99%AE%E6%9F%A5/"/>
-    <id>https://ddoublewu.github.io/2018/10/21/PAT-B-1028-人口普查/</id>
-    <published>2018-10-21T07:52:45.000Z</published>
-    <updated>2018-10-22T15:51:44.400Z</updated>
-    
-    <content type="html"><![CDATA[<p>（20分）某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。<br>这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6 日，所以超过 200 岁的生日和未出生的生日都是不合理的，应该被过滤掉。<br><a id="more"></a></p><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在第一行给出正整数 N，取值在(0,10​5​​]；随后 N 行，每行给出 1 个人的姓名（由不超过 5 个英文字母组成的字符串）以及按 yyyy/mm/dd（即年/月/日）格式给出的生日。题目保证最年长和最年轻的人没有并列。</p><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中顺序输出有效生日的个数、最年长人和最年轻人的姓名，其间以空格分隔。</p><h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line">John <span class="number">2001</span>/<span class="number">05</span>/<span class="number">12</span></span><br><span class="line">Tom <span class="number">1814</span>/<span class="number">09</span>/<span class="number">06</span></span><br><span class="line">Ann <span class="number">2121</span>/<span class="number">01</span>/<span class="number">30</span></span><br><span class="line">James <span class="number">1814</span>/<span class="number">09</span>/<span class="number">05</span></span><br><span class="line">Steve <span class="number">1967</span>/<span class="number">11</span>/<span class="number">20</span></span><br></pre></td></tr></table></figure><h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> Tom John</span><br></pre></td></tr></table></figure><h2 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h2><ol><li><strong>年龄大小的比较</strong></li><li><strong>当没有符合要求的年龄时，输出为0</strong></li><li><strong>对输入的处理</strong></li></ol><h2 id="习得知识点"><a href="#习得知识点" class="headerlink" title="习得知识点"></a>习得知识点</h2><p>scanf的用法：<br>参考文章：<a href="https://blog.csdn.net/21aspnet/article/details/174326" target="_blank" rel="noopener">C语言函数详解</a><br>对年月日大小的比较：<br>参考文章: <a href="https://blog.csdn.net/daniel960601/article/details/55261196" target="_blank" rel="noopener">https://blog.csdn.net/daniel960601/article/details/55261196</a><br>即year <em> 10000 + month </em> 100 + day，即可比较大小</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">People</span> &#123;</span></span><br><span class="line"><span class="keyword">char</span> name[<span class="number">6</span>];</span><br><span class="line"><span class="keyword">int</span> year, month, day;</span><br><span class="line"><span class="keyword">int</span> total;</span><br><span class="line">&#125;p[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> N, i, n = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> max, min;</span><br><span class="line"><span class="keyword">char</span> old_name[<span class="number">6</span>], young_name[<span class="number">6</span>];</span><br><span class="line">max = <span class="number">0</span>;</span><br><span class="line">min = <span class="number">20140907</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;N; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s %d/%d/%d"</span>,&amp;p[i].name,&amp;p[i].year, &amp;p[i].month, &amp;p[i].day);</span><br><span class="line">p[i].total = p[i].year * <span class="number">10000</span> + p[i].month * <span class="number">100</span> + p[i].day;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;N; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (p[i].total&gt;<span class="number">20140906</span> || p[i].total&lt;<span class="number">18140906</span>) <span class="keyword">continue</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line"><span class="keyword">if</span> (p[i].total&gt;max)</span><br><span class="line">&#123;</span><br><span class="line">max = p[i].total;</span><br><span class="line"><span class="built_in">strcpy</span>(young_name, p[i].name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (p[i].total&lt;min)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">strcpy</span>(old_name, p[i].name);</span><br><span class="line">min = p[i].total;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(n) <span class="built_in">printf</span>(<span class="string">"%d %s %s"</span>, n, old_name, young_name);</span><br><span class="line"><span class="keyword">else</span>  <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;（20分）某城镇进行人口普查，得到了全体居民的生日。现请你写个程序，找出镇上最年长和最年轻的人。&lt;br&gt;这里确保每个输入的日期都是合法的，但不一定是合理的——假设已知镇上没有超过 200 岁的老人，而今天是 2014 年 9 月 6 日，所以超过 200 岁的生日和未出生的生日都是不合理的，应该被过滤掉。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
-    
     
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
