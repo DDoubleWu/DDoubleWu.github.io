@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ddoublewu.github.io/"/>
-  <updated>2018-11-13T13:01:03.389Z</updated>
+  <updated>2018-11-13T14:38:52.400Z</updated>
   <id>https://ddoublewu.github.io/</id>
   
   <author>
@@ -21,29 +21,27 @@
     <link href="https://ddoublewu.github.io/2018/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-8-%E5%A0%86/"/>
     <id>https://ddoublewu.github.io/2018/11/13/数据结构-8-堆/</id>
     <published>2018-11-13T12:53:00.000Z</published>
-    <updated>2018-11-13T13:01:03.389Z</updated>
+    <updated>2018-11-13T14:38:52.400Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>若采用数组或链表实现优先队列</strong></p><ol><li><strong>数组</strong><br>插入：元素总是插入尾部   ~O(1)<br>删除：查找最大（或最小）关键字   ~O(n)<br>   从数组中删除需要移动的元素 ~O(n)</li><li><strong>链表</strong><br>插入：元素总是插入链表的头部   ~O(1)<br>删除：查找最大（或最小）关键字 ~O(n)<br>   删去结点               ~O(1)</li><li><strong>有序数组</strong><br>插入：找到合适的位置   ~O(n)或~O($ log_2n $)<br>删除：移动元素并插入   ~O(n)<br>   删去最后一个元素 ~O(1)</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="若采用数组或链表实现优先队列"><a href="#若采用数组或链表实现优先队列" class="headerlink" title="若采用数组或链表实现优先队列__"></a>若采用数组或链表实现优先队列__</h2><ol><li><strong>数组</strong><br>插入：元素总是插入尾部   ~O(1)<br>删除：查找最大（或最小）关键字   ~O(n)<br>   从数组中删除需要移动的元素 ~O(n)</li><li><strong>链表</strong><br>插入：元素总是插入链表的头部   ~O(1)<br>删除：查找最大（或最小）关键字 ~O(n)<br>   删去结点               ~O(1)</li><li><strong>有序数组</strong><br>插入：找到合适的位置   ~O(n)或~O($ log_2n $)<br>删除：移动元素并插入   ~O(n)<br>   删去最后一个元素 ~O(1)<a id="more"></a></li></ol><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h3 id="两个特性"><a href="#两个特性" class="headerlink" title="两个特性"></a>两个特性</h3><ol><li><strong>结构性</strong><br>用数组表示的<strong>完全二叉树</strong></li><li><strong>有序性</strong><br><strong>任一结点的关键字是其子树所有结点的最大值（或最小值）</strong><br><strong>注:</strong><br>MaxHeap:也称“大顶堆”，最大值<br>MinHeap:也称“小顶堆”，最小值<br>堆：从根结点到任意结点路径上结点序列的有序性。</li></ol><h3 id="堆的抽象数据类型描述"><a href="#堆的抽象数据类型描述" class="headerlink" title="堆的抽象数据类型描述"></a>堆的抽象数据类型描述</h3><p><strong>类型名称:</strong> 最大堆（MaxHeap）<br><strong>数据对象集:</strong> 完全二叉树，每个结点的元素值不小于其子结点的元素值<br><strong>操作集:</strong> 最大堆H MaxHeap  元素item ElementType</p><ol><li><strong>MaxHeap Create(int MaxSize):</strong> 创建一个空的最大堆</li><li><strong>Boolean isFull(MaxHeap H):</strong> 判断最大堆H是否已满</li><li><strong>Insert(MaxHeap H,ElementType item):</strong> 将元素item插入最大堆H</li><li><strong>Boolean isEmpty(MaxHeap H):</strong> 判断最大堆是否为空</li><li><strong>ElementType DeleteMax(MaxHeap H):</strong> 返回H中的最大元素（高优先级）</li></ol><h2 id="最大堆的操作"><a href="#最大堆的操作" class="headerlink" title="最大堆的操作"></a>最大堆的操作</h2><h3 id="最大堆的创建"><a href="#最大堆的创建" class="headerlink" title="最大堆的创建"></a>最大堆的创建</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span> *<span class="title">MaxHeap</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span>&#123;</span></span><br><span class="line">    ElementType *Elements; <span class="comment">//存储堆元素的数组</span></span><br><span class="line">    <span class="keyword">int</span> Size;   <span class="comment">//堆的当前元素个数</span></span><br><span class="line">    <span class="keyword">int</span> Capacity; <span class="comment">//堆的最大容量</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">MaxHeap <span class="title">Create</span><span class="params">(<span class="keyword">int</span> MaxSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MaxHeap H = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct HeapStruct));</span><br><span class="line">    H-&gt;Elements = <span class="built_in">malloc</span>((MaxSize+<span class="number">1</span>)*<span class="keyword">sizeof</span>(ElementType))</span><br><span class="line">    H-&gt;Size = <span class="number">0</span>;</span><br><span class="line">    H-&gt;Capacity = MaxSize;</span><br><span class="line">    H-&gt;Elements[<span class="number">0</span>] = MaxData;</span><br><span class="line">    <span class="comment">//定义"哨兵"为大于堆中所有可能元素的值，便于以后更快操作</span></span><br><span class="line">    <span class="keyword">return</span> H;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;&lt;strong&gt;若采用数组或链表实现优先队列&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;&lt;br&gt;插入：元素总是插入尾部   ~O(1)&lt;br&gt;删除：查找最大（或最小）关键字   ~O(n)&lt;br&gt;   从数组中删除需要移动的元素 ~O
-      
+      &lt;h2 id=&quot;若采用数组或链表实现优先队列&quot;&gt;&lt;a href=&quot;#若采用数组或链表实现优先队列&quot; class=&quot;headerlink&quot; title=&quot;若采用数组或链表实现优先队列__&quot;&gt;&lt;/a&gt;若采用数组或链表实现优先队列__&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数组&lt;/strong&gt;&lt;br&gt;插入：元素总是插入尾部   ~O(1)&lt;br&gt;删除：查找最大（或最小）关键字   ~O(n)&lt;br&gt;   从数组中删除需要移动的元素 ~O(n)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链表&lt;/strong&gt;&lt;br&gt;插入：元素总是插入链表的头部   ~O(1)&lt;br&gt;删除：查找最大（或最小）关键字 ~O(n)&lt;br&gt;   删去结点               ~O(1)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有序数组&lt;/strong&gt;&lt;br&gt;插入：找到合适的位置   ~O(n)或~O($ log_2n $)&lt;br&gt;删除：移动元素并插入   ~O(n)&lt;br&gt;   删去最后一个元素 ~O(1)
     
     </summary>
     
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -61,11 +59,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -87,11 +85,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -116,11 +114,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -171,11 +169,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -201,11 +199,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -228,11 +226,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -254,11 +252,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -283,11 +281,11 @@
       <category term="数据结构" scheme="https://ddoublewu.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="数据结构" scheme="https://ddoublewu.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="计算机408" scheme="https://ddoublewu.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA408/"/>
-    
-      <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -310,13 +308,13 @@
       <category term="笔记" scheme="https://ddoublewu.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
+    
+      <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="基础" scheme="https://ddoublewu.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -338,11 +336,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -365,11 +363,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -391,11 +389,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -417,11 +415,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -444,11 +442,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -470,11 +468,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -496,11 +494,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -523,11 +521,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   
@@ -549,11 +547,11 @@
       <category term="PAT" scheme="https://ddoublewu.github.io/categories/PAT/"/>
     
     
-      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
-    
       <category term="C++" scheme="https://ddoublewu.github.io/tags/C/"/>
     
       <category term="笔记" scheme="https://ddoublewu.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PAT" scheme="https://ddoublewu.github.io/tags/PAT/"/>
     
   </entry>
   

@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,计算机408,笔记," />
+  <meta name="keywords" content="笔记,数据结构,计算机408," />
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="若采用数组或链表实现优先队列  数组插入：元素总是插入尾部   ~O(1)删除：查找最大（或最小）关键字   ~O(n)   从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部   ~O(1)删除：查找最大（或最小）关键字 ~O(n)   删去结点               ~O(1) 有序数组插入：找到合适的位置   ~O(n)或~O($ log_2n $)删除：移动元素">
-<meta name="keywords" content="数据结构,计算机408,笔记">
+<meta name="description" content="若采用数组或链表实现优先队列__ 数组插入：元素总是插入尾部   ~O(1)删除：查找最大（或最小）关键字   ~O(n)   从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部   ~O(1)删除：查找最大（或最小）关键字 ~O(n)   删去结点               ~O(1) 有序数组插入：找到合适的位置   ~O(n)或~O($ log_2n $)删除：移动元">
+<meta name="keywords" content="笔记,数据结构,计算机408">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构 (8)堆">
 <meta property="og:url" content="https://ddoublewu.github.io/2018/11/13/数据结构-8-堆/index.html">
 <meta property="og:site_name" content="DDoubleWu的博客">
-<meta property="og:description" content="若采用数组或链表实现优先队列  数组插入：元素总是插入尾部   ~O(1)删除：查找最大（或最小）关键字   ~O(n)   从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部   ~O(1)删除：查找最大（或最小）关键字 ~O(n)   删去结点               ~O(1) 有序数组插入：找到合适的位置   ~O(n)或~O($ log_2n $)删除：移动元素">
+<meta property="og:description" content="若采用数组或链表实现优先队列__ 数组插入：元素总是插入尾部   ~O(1)删除：查找最大（或最小）关键字   ~O(n)   从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部   ~O(1)删除：查找最大（或最小）关键字 ~O(n)   删去结点               ~O(1) 有序数组插入：找到合适的位置   ~O(n)或~O($ log_2n $)删除：移动元">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-13T13:01:03.389Z">
+<meta property="og:updated_time" content="2018-11-13T14:38:52.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构 (8)堆">
-<meta name="twitter:description" content="若采用数组或链表实现优先队列  数组插入：元素总是插入尾部   ~O(1)删除：查找最大（或最小）关键字   ~O(n)   从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部   ~O(1)删除：查找最大（或最小）关键字 ~O(n)   删去结点               ~O(1) 有序数组插入：找到合适的位置   ~O(n)或~O($ log_2n $)删除：移动元素">
+<meta name="twitter:description" content="若采用数组或链表实现优先队列__ 数组插入：元素总是插入尾部   ~O(1)删除：查找最大（或最小）关键字   ~O(n)   从数组中删除需要移动的元素 ~O(n) 链表插入：元素总是插入链表的头部   ~O(1)删除：查找最大（或最小）关键字 ~O(n)   删去结点               ~O(1) 有序数组插入：找到合适的位置   ~O(n)或~O($ log_2n $)删除：移动元">
 
 
 
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  133 字
+                  458 字
                 </span>
               
 
@@ -461,12 +461,25 @@
       
 
       
-        <p><strong>若采用数组或链表实现优先队列</strong></p>
-<ol>
+        <h2 id="若采用数组或链表实现优先队列"><a href="#若采用数组或链表实现优先队列" class="headerlink" title="若采用数组或链表实现优先队列__"></a>若采用数组或链表实现优先队列__</h2><ol>
 <li><strong>数组</strong><br>插入：元素总是插入尾部   ~O(1)<br>删除：查找最大（或最小）关键字   ~O(n)<br>   从数组中删除需要移动的元素 ~O(n)</li>
 <li><strong>链表</strong><br>插入：元素总是插入链表的头部   ~O(1)<br>删除：查找最大（或最小）关键字 ~O(n)<br>   删去结点               ~O(1)</li>
-<li><strong>有序数组</strong><br>插入：找到合适的位置   ~O(n)或~O($ log_2n $)<br>删除：移动元素并插入   ~O(n)<br>   删去最后一个元素 ~O(1)</li>
+<li><strong>有序数组</strong><br>插入：找到合适的位置   ~O(n)或~O($ log_2n $)<br>删除：移动元素并插入   ~O(n)<br>   删去最后一个元素 ~O(1)<a id="more"></a>
+</li>
 </ol>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h3 id="两个特性"><a href="#两个特性" class="headerlink" title="两个特性"></a>两个特性</h3><ol>
+<li><strong>结构性</strong><br>用数组表示的<strong>完全二叉树</strong></li>
+<li><strong>有序性</strong><br><strong>任一结点的关键字是其子树所有结点的最大值（或最小值）</strong><br><strong>注:</strong><br>MaxHeap:也称“大顶堆”，最大值<br>MinHeap:也称“小顶堆”，最小值<br>堆：从根结点到任意结点路径上结点序列的有序性。</li>
+</ol>
+<h3 id="堆的抽象数据类型描述"><a href="#堆的抽象数据类型描述" class="headerlink" title="堆的抽象数据类型描述"></a>堆的抽象数据类型描述</h3><p><strong>类型名称:</strong> 最大堆（MaxHeap）<br><strong>数据对象集:</strong> 完全二叉树，每个结点的元素值不小于其子结点的元素值<br><strong>操作集:</strong> 最大堆H MaxHeap  元素item ElementType</p>
+<ol>
+<li><strong>MaxHeap Create(int MaxSize):</strong> 创建一个空的最大堆</li>
+<li><strong>Boolean isFull(MaxHeap H):</strong> 判断最大堆H是否已满</li>
+<li><strong>Insert(MaxHeap H,ElementType item):</strong> 将元素item插入最大堆H</li>
+<li><strong>Boolean isEmpty(MaxHeap H):</strong> 判断最大堆是否为空</li>
+<li><strong>ElementType DeleteMax(MaxHeap H):</strong> 返回H中的最大元素（高优先级）</li>
+</ol>
+<h2 id="最大堆的操作"><a href="#最大堆的操作" class="headerlink" title="最大堆的操作"></a>最大堆的操作</h2><h3 id="最大堆的创建"><a href="#最大堆的创建" class="headerlink" title="最大堆的创建"></a>最大堆的创建</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span> *<span class="title">MaxHeap</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span>&#123;</span></span><br><span class="line">    ElementType *Elements; <span class="comment">//存储堆元素的数组</span></span><br><span class="line">    <span class="keyword">int</span> Size;   <span class="comment">//堆的当前元素个数</span></span><br><span class="line">    <span class="keyword">int</span> Capacity; <span class="comment">//堆的最大容量</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">MaxHeap <span class="title">Create</span><span class="params">(<span class="keyword">int</span> MaxSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MaxHeap H = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct HeapStruct));</span><br><span class="line">    H-&gt;Elements = <span class="built_in">malloc</span>((MaxSize+<span class="number">1</span>)*<span class="keyword">sizeof</span>(ElementType))</span><br><span class="line">    H-&gt;Size = <span class="number">0</span>;</span><br><span class="line">    H-&gt;Capacity = MaxSize;</span><br><span class="line">    H-&gt;Elements[<span class="number">0</span>] = MaxData;</span><br><span class="line">    <span class="comment">//定义"哨兵"为大于堆中所有可能元素的值，便于以后更快操作</span></span><br><span class="line">    <span class="keyword">return</span> H;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -483,7 +496,7 @@
     
     <div>
       
-         <div class="my_post_copyright"> <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script> <!-- JS库 sweetalert 可修改路径 --> <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <p><span>本文标题:</span><a href="/2018/11/13/数据结构-8-堆/">数据结构 (8)堆</a></p> <p><span>文章作者:</span><a href="/" title="访问 DDoubleWu 的个人博客">DDoubleWu</a></p> <p><span>发布时间:</span>2018年11月13日 - 20:11</p> <p><span>最后更新:</span>2018年11月13日 - 21:11</p> <p><span>原始链接:</span><a href="/2018/11/13/数据结构-8-堆/" title="数据结构 (8)堆">https://ddoublewu.github.io/2018/11/13/数据结构-8-堆/</a> <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://ddoublewu.github.io/2018/11/13/数据结构-8-堆/" aria-label="复制成功！"></i></span> </p> <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p> </div> <script> var clipboard = new Clipboard('.fa-clipboard'); $(".fa-clipboard").click(function(){ clipboard.on('success', function(){ swal({ title: "", text: '复制成功', icon: "success", showConfirmButton: true }); }); }); </script> 
+        
 
       
     </div>
@@ -540,11 +553,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
             <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
             <a href="/tags/计算机408/" rel="tag"><i class="fa fa-tag"></i> 计算机408</a>
-          
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
         </div>
       
@@ -625,8 +638,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -720,6 +742,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#若采用数组或链表实现优先队列"><span class="nav-number">1.</span> <span class="nav-text">若采用数组或链表实现优先队列__</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-number">2.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个特性"><span class="nav-number">2.1.</span> <span class="nav-text">两个特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的抽象数据类型描述"><span class="nav-number">2.2.</span> <span class="nav-text">堆的抽象数据类型描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大堆的操作"><span class="nav-number">3.</span> <span class="nav-text">最大堆的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大堆的创建"><span class="nav-number">3.1.</span> <span class="nav-text">最大堆的创建</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -763,7 +801,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共17.5k字</span>
+  <span class="post-count">博客全站共17.8k字</span>
 </div>
 
         
